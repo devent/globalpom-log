@@ -6,12 +6,28 @@
 		<artifactId>globalpom-parent</artifactId>
 		<groupId>com.anrisoftware.globalpom</groupId>
 		<version>1.14</version>
-		<relativePath>../globalpom-parent</relativePath>
 	</parent>
 
 	<artifactId>globalpom-log</artifactId>
     <version>1.2-SNAPSHOT</version>
     <description>Logger factory to inject a logger for a class.</description>
+
+    <scm>
+        <connection>scm:git:${custom.gitpublic.url}globalpom-log.git</connection>
+        <developerConnection>scm:git:${custom.gitpublic.url}globalpom-log.git</developerConnection>
+        <url>scm:git:${custom.gitpublic.url}globalpom-log.git</url>
+    </scm>
+    
+    <distributionManagement>
+        <repository>
+            <id>${custom.repository.anrispublic.id}</id>
+            <url>${custom.repository.root}${custom.repository.anrispublic.path}</url>
+        </repository>
+        <snapshotRepository>
+            <id>${custom.repository.anrispublicsnapshots.id}</id>
+            <url>${custom.repository.root}${custom.repository.anrispublicsnapshots.path}</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 	<dependencies>
 
