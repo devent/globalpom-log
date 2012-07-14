@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
  * The base class of an {@link Logger} that can be serialized.
  * 
  * @author Erwin Mueller, erwin.mueller@deventm.org
- * @since 1.13
+ * @since 1.0
  */
 public abstract class AbstractSerializedLogger implements Externalizable {
 

@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
  * Base class for a {@link Logger}.
  * 
  * @author Erwin Mueller, erwin.mueller@deventm.org
- * @since 1.13
+ * @since 1.0
  */
 public abstract class AbstractLogger {
 
