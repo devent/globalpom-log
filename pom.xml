@@ -9,7 +9,7 @@
 	</parent>
 
 	<artifactId>globalpom-log</artifactId>
-    <version>1.4</version>
+    <version>1.5-SNAPSHOT</version>
     <description>Logger factory to inject a logger for a class.</description>
 
     <scm>
@@ -17,7 +17,7 @@
         <developerConnection>scm:git:${custom.gitpublic.url}globalpom-log.git</developerConnection>
         <url>scm:git:${custom.gitpublic.url}globalpom-log.git</url>
     </scm>
-    
+
     <distributionManagement>
         <repository>
             <id>${custom.repository.anrispublic.id}</id>
