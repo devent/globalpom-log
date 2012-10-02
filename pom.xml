@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>globalpom-log</artifactId>
-	<version>1.5-SNAPSHOT</version>
+	<version>1.5</version>
 	<description>Logger factory to inject a logger for a class.</description>
 	<inceptionYear>2011</inceptionYear>
 
