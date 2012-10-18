@@ -6,11 +6,12 @@
 	<parent>
 		<artifactId>globalpom-parent</artifactId>
 		<groupId>com.anrisoftware.globalpom</groupId>
-		<version>1.23</version>
+		<version>1.24-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>globalpom-log</artifactId>
-	<version>1.5</version>
+	<version>1.6-SNAPSHOT</version>
+    <packaging>bundle</packaging>
 	<description>Logger factory to inject a logger for a class.</description>
 	<inceptionYear>2011</inceptionYear>
 
@@ -49,5 +50,26 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Bundle-Version>${project.version}</Bundle-Version>
+                        <Export-Package>
+                            com.anrisoftware.globalpom.log
+                        </Export-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
