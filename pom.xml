@@ -6,18 +6,14 @@
 	<parent>
 		<artifactId>globalpom-parent</artifactId>
 		<groupId>com.anrisoftware.globalpom</groupId>
-		<version>1.26</version>
+		<version>1.27-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>globalpom-log</artifactId>
-	<version>1.7</version>
+	<version>1.8-SNAPSHOT</version>
 	<name>Logging</name>
 	<description>Logger factory to inject a logger for a class.</description>
 	<inceptionYear>2011</inceptionYear>
-
-	<properties>
-		<project.custom.year>${project.inceptionYear}-2012</project.custom.year>
-	</properties>
 
 	<scm>
 		<connection>scm:git:${custom.gitpublic.url}globalpom-log.git</connection>
