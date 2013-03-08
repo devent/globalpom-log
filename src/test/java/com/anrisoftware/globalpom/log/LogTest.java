@@ -18,9 +18,12 @@
  */
 package com.anrisoftware.globalpom.log;
 
+import static com.anrisoftware.globalpom.utils.TestUtils.reserialize;
+
+import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.google.common.testing.SerializableTester;
+import com.anrisoftware.globalpom.log.SerializedLoggerFactory.Logger;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
@@ -32,19 +35,11 @@ import com.google.inject.Injector;
  */
 public class LogTest {
 
-	private static Injector injector = Guice.createInjector(new LoggerModule());
-
-	private static SerializedLoggerFactory serializedLoggerFactory = injector
-			.getInstance(SerializedLoggerFactory.class);
-
-	private static LoggerFactory loggerFactory = injector
-			.getInstance(LoggerFactory.class);
-
 	@Test
 	public void serialize_and_deserialize_logger() {
-		SerializedLoggerFactory.Logger log = serializedLoggerFactory
+		SerializedLoggerFactory.Logger log = serializedFactory
 				.create(LogTest.class);
-		log = SerializableTester.reserialize(log);
+		log = (Logger) reserialize(log);
 		log.logInfo();
 	}
 
@@ -52,5 +47,18 @@ public class LogTest {
 	public void not_serializable_logger() {
 		LoggerFactory.Logger log = loggerFactory.create(LogTest.class);
 		log.logInfo();
+	}
+
+	private static Injector injector;
+
+	private static SerializedLoggerFactory serializedFactory;
+
+	private static LoggerFactory loggerFactory;
+
+	@BeforeClass
+	public static void createFactories() {
+		injector = Guice.createInjector(new LoggerModule());
+		serializedFactory = injector.getInstance(SerializedLoggerFactory.class);
+		loggerFactory = injector.getInstance(LoggerFactory.class);
 	}
 }

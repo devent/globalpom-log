@@ -35,10 +35,10 @@ interface LoggerFactory {
 	Logger create(@Assisted Class<?> clazz);
 
 	/**
-	 * Contains log messages for the template worker.
+	 * Contains log messages.
 	 * 
 	 * @author Erwin Mueller, erwin.mueller@deventm.org
-	 * @since 1.13
+	 * @since 1.4
 	 */
 	class Logger extends AbstractLogger {
 

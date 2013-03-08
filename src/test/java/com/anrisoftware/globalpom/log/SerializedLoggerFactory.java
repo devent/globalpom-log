@@ -22,7 +22,7 @@ import com.google.inject.Inject;
 import com.google.inject.assistedinject.Assisted;
 
 /**
- * Factory to create a new {@link Logger}.
+ * Factory to create a new serialized {@link Logger}.
  * 
  * @author Erwin Mueller, erwin.mueller@deventm.org
  * @since 1.4
@@ -30,15 +30,15 @@ import com.google.inject.assistedinject.Assisted;
 interface SerializedLoggerFactory {
 
 	/**
-	 * create a new {@link Logger} for the given context {@link Class}.
+	 * Create a new {@link Logger} for the given context {@link Class}.
 	 */
 	Logger create(@Assisted Class<?> clazz);
 
 	/**
-	 * Contains log messages for the template worker.
+	 * The logger.
 	 * 
 	 * @author Erwin Mueller, erwin.mueller@deventm.org
-	 * @since 1.13
+	 * @since 1.4
 	 */
 	static class Logger extends AbstractSerializedLogger {
 
