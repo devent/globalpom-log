@@ -13,12 +13,18 @@
 	<version>1.9-SNAPSHOT</version>
 	<name>Logging</name>
 	<description>Logger factory to inject a logger for a class.</description>
+	<url>https://www.anr-institute.com/projects/projects/globalpom-log</url>
 	<inceptionYear>2011</inceptionYear>
+
+	<issueManagement>
+		<system>Redmine</system>
+		<url>https://www.anr-institute.com/projects/projects/globalpom-log</url>
+	</issueManagement>
 
 	<scm>
 		<connection>scm:git:${custom.gitpublic.url}globalpom-log.git</connection>
 		<developerConnection>scm:git:${custom.gitpublic.url}globalpom-log.git</developerConnection>
-		<url>scm:git:${custom.gitpublic.url}globalpom-log.git</url>
+		<url>https://www.anr-institute.com/gitpublic/globalpom-log.git/</url>
 	</scm>
 
 	<distributionManagement>
