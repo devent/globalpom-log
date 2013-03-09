@@ -32,7 +32,8 @@ import org.slf4j.LoggerFactory;
  * @author Erwin Mueller, erwin.mueller@deventm.org
  * @since 1.0
  */
-public abstract class AbstractSerializedLogger implements Externalizable {
+public abstract class AbstractSerializedLogger extends AbstractLogger implements
+		Externalizable {
 
 	protected transient Logger log;
 
@@ -41,14 +42,15 @@ public abstract class AbstractSerializedLogger implements Externalizable {
 	/**
 	 * For serialization.
 	 */
-	@Deprecated
-	protected AbstractSerializedLogger() {
+	public AbstractSerializedLogger() {
 	}
 
 	/**
 	 * Creates a new {@link Logger} for the given context {@link Class}.
 	 */
-	protected AbstractSerializedLogger(Class<?> contextClass) {
+	protected AbstractSerializedLogger(
+			@SuppressWarnings("rawtypes") Class contextClass) {
+		super(contextClass);
 		this.contextClass = contextClass;
 		this.log = LoggerFactory.getLogger(contextClass);
 	}

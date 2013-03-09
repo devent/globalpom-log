@@ -45,7 +45,6 @@ interface SerializedLoggerFactory {
 		/**
 		 * For serialization.
 		 */
-		@Deprecated
 		public Logger() {
 		}
 

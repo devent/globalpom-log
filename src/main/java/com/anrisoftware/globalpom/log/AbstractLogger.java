@@ -32,10 +32,35 @@ public abstract class AbstractLogger {
 	protected transient Logger log;
 
 	/**
+	 * Needs to set the logger.
+	 */
+	public AbstractLogger() {
+	}
+
+	/**
 	 * Creates a new {@link Logger} for the given context {@link Class}.
 	 */
 	protected AbstractLogger(@SuppressWarnings("rawtypes") Class contextClass) {
 		this.log = LoggerFactory.getLogger(contextClass);
+	}
+
+	/**
+	 * Log the specified exception.
+	 * 
+	 * @param message
+	 *            the message of the exception.
+	 * 
+	 * @param ex
+	 *            the {@link Exception}.
+	 */
+	protected void logException(String message, Exception ex) {
+		if (log.isDebugEnabled()) {
+			log.debug(ex.getMessage());
+		} else if (log.isTraceEnabled()) {
+			log.error("", ex);
+		} else {
+			log.error(message);
+		}
 	}
 
 }
