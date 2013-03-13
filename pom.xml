@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>globalpom-log</artifactId>
-	<version>1.9-SNAPSHOT</version>
+	<version>1.9</version>
 	<name>Logging</name>
 	<description>Logger factory to inject a logger for a class.</description>
 	<url>https://www.anr-institute.com/projects/projects/globalpom-log</url>
