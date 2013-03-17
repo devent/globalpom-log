@@ -54,10 +54,10 @@ public abstract class AbstractLogger {
 	 *            the {@link Exception}.
 	 */
 	protected void logException(String message, Exception ex) {
-		if (log.isDebugEnabled()) {
-			log.debug(ex.getMessage());
-		} else if (log.isTraceEnabled()) {
+		if (log.isTraceEnabled()) {
 			log.error("", ex);
+		} else if (log.isDebugEnabled()) {
+			log.debug(ex.getMessage());
 		} else {
 			log.error(message);
 		}
