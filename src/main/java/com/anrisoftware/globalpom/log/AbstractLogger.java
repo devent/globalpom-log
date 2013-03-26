@@ -58,9 +58,15 @@ public abstract class AbstractLogger {
 	 * @param args
 	 *            optional arguments for the message.
 	 * 
+	 * @param <T>
+	 *            the exception type.
+	 * 
+	 * @return the {@link Exception}.
+	 * 
 	 * @since 1.10
 	 */
-	protected void logException(Exception ex, String message, Object... args) {
+	protected <T extends Exception> T logException(T ex, String message,
+			Object... args) {
 		if (log.isTraceEnabled()) {
 			log.error("", ex);
 		} else if (log.isDebugEnabled()) {
@@ -68,6 +74,7 @@ public abstract class AbstractLogger {
 		} else {
 			log.error(format(message, args));
 		}
+		return ex;
 	}
 
 }
