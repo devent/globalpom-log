@@ -18,6 +18,8 @@
  */
 package com.anrisoftware.globalpom.log;
 
+import static java.lang.String.format;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -47,19 +49,24 @@ public abstract class AbstractLogger {
 	/**
 	 * Log the specified exception.
 	 * 
+	 * @param ex
+	 *            the {@link Exception}.
+	 * 
 	 * @param message
 	 *            the message of the exception.
 	 * 
-	 * @param ex
-	 *            the {@link Exception}.
+	 * @param args
+	 *            optional arguments for the message.
+	 * 
+	 * @since 1.10
 	 */
-	protected void logException(String message, Exception ex) {
+	protected void logException(Exception ex, String message, Object... args) {
 		if (log.isTraceEnabled()) {
 			log.error("", ex);
 		} else if (log.isDebugEnabled()) {
 			log.debug(ex.getMessage());
 		} else {
-			log.error(message);
+			log.error(format(message, args));
 		}
 	}
 
