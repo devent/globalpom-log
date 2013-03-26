@@ -23,7 +23,6 @@ import static com.anrisoftware.globalpom.utils.TestUtils.reserialize;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.anrisoftware.globalpom.log.SerializedLoggerFactory.Logger;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
@@ -37,28 +36,21 @@ public class LogTest {
 
 	@Test
 	public void serialize_and_deserialize_logger() {
-		SerializedLoggerFactory.Logger log = serializedFactory
-				.create(LogTest.class);
+		Logger log = injector.getInstance(Logger.class);
 		log = (Logger) reserialize(log);
 		log.logInfo();
 	}
 
 	@Test
-	public void not_serializable_logger() {
-		LoggerFactory.Logger log = loggerFactory.create(LogTest.class);
+	public void log_info() {
+		Logger log = injector.getInstance(Logger.class);
 		log.logInfo();
 	}
 
 	private static Injector injector;
 
-	private static SerializedLoggerFactory serializedFactory;
-
-	private static LoggerFactory loggerFactory;
-
 	@BeforeClass
-	public static void createFactories() {
-		injector = Guice.createInjector(new LoggerModule());
-		serializedFactory = injector.getInstance(SerializedLoggerFactory.class);
-		loggerFactory = injector.getInstance(LoggerFactory.class);
+	public static void createInjector() {
+		injector = Guice.createInjector();
 	}
 }

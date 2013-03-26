@@ -20,6 +20,11 @@ package com.anrisoftware.globalpom.log;
 
 import static java.lang.String.format;
 
+import java.io.Externalizable;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectOutput;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,12 +34,14 @@ import org.slf4j.LoggerFactory;
  * @author Erwin Mueller, erwin.mueller@deventm.org
  * @since 1.0
  */
-public abstract class AbstractLogger {
+public abstract class AbstractLogger implements Externalizable {
 
 	protected transient Logger log;
 
+	private Class<?> contextClass;
+
 	/**
-	 * Needs to set the logger.
+	 * For serialization.
 	 */
 	public AbstractLogger() {
 	}
@@ -44,6 +51,7 @@ public abstract class AbstractLogger {
 	 */
 	protected AbstractLogger(@SuppressWarnings("rawtypes") Class contextClass) {
 		this.log = LoggerFactory.getLogger(contextClass);
+		this.contextClass = contextClass;
 	}
 
 	/**
@@ -75,6 +83,19 @@ public abstract class AbstractLogger {
 			log.error(format(message, args));
 		}
 		return ex;
+	}
+
+	@Override
+	public void writeExternal(ObjectOutput out) throws IOException {
+		out.writeObject(contextClass);
+		out.flush();
+	}
+
+	@Override
+	public void readExternal(ObjectInput in) throws IOException,
+			ClassNotFoundException {
+		contextClass = (Class<?>) in.readObject();
+		log = LoggerFactory.getLogger(contextClass);
 	}
 
 }
