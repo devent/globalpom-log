@@ -6,11 +6,11 @@
 	<parent>
 		<artifactId>globalpom-parent</artifactId>
 		<groupId>com.anrisoftware.globalpom</groupId>
-		<version>1.30-SNAPSHOT</version>
+		<version>1.30</version>
 	</parent>
 
 	<artifactId>globalpom-log</artifactId>
-	<version>1.10-SNAPSHOT</version>
+	<version>1.10</version>
 	<name>Logging</name>
 	<description>Logger factory to inject a logger for a class.</description>
 	<url>https://www.anr-institute.com/projects/projects/globalpom-log</url>
