@@ -18,6 +18,7 @@
  */
 package com.anrisoftware.globalpom.log;
 
+
 /**
  * Contains log messages.
  * 
@@ -25,6 +26,10 @@ package com.anrisoftware.globalpom.log;
  * @since 1.10
  */
 class Logger extends AbstractLogger {
+
+	private static final String NPE_ERROR_MESSAGE = "Some NPE error in %s.";
+
+	private static final String NPE_ERROR = "NPE error";
 
 	/**
 	 * For serialization.
@@ -37,4 +42,8 @@ class Logger extends AbstractLogger {
 		log.info("text");
 	}
 
+	void logException() {
+		throw logException(new NullPointerException(NPE_ERROR),
+				NPE_ERROR_MESSAGE, "Foo");
+	}
 }

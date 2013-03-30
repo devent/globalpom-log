@@ -54,4 +54,16 @@
 		</dependency>
 	</dependencies>
 
+	<build>
+		<resources>
+			<resource>
+				<directory>src/test/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>logback.properties</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+
 </project>

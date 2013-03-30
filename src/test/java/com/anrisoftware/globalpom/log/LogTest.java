@@ -47,6 +47,12 @@ public class LogTest {
 		log.logInfo();
 	}
 
+	@Test(expected = NullPointerException.class)
+	public void log_exception() {
+		Logger log = injector.getInstance(Logger.class);
+		log.logException();
+	}
+
 	private static Injector injector;
 
 	@BeforeClass
