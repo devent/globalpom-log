@@ -58,7 +58,7 @@ public abstract class AbstractLogger implements Externalizable {
 	 * Log the specified exception.
 	 * 
 	 * @param ex
-	 *            the {@link Exception}.
+	 *            the {@link Throwable}.
 	 * 
 	 * @param message
 	 *            the message of the exception.
@@ -69,11 +69,11 @@ public abstract class AbstractLogger implements Externalizable {
 	 * @param <T>
 	 *            the exception type.
 	 * 
-	 * @return the {@link Exception}.
+	 * @return the {@link Throwable}.
 	 * 
-	 * @since 1.10
+	 * @since 1.11
 	 */
-	protected <T extends Exception> T logException(T ex, String message,
+	protected <T extends Throwable> T logException(T ex, String message,
 			Object... args) {
 		if (log.isTraceEnabled()) {
 			log.error("", ex);
