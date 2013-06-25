@@ -18,8 +18,6 @@
  */
 package com.anrisoftware.globalpom.log;
 
-import static java.lang.String.format;
-
 import java.io.Externalizable;
 import java.io.IOException;
 import java.io.ObjectInput;
@@ -71,7 +69,7 @@ public abstract class AbstractLogger implements Externalizable {
 	 * 
 	 * @return the {@link Throwable}.
 	 * 
-	 * @since 1.11
+	 * @since 1.12
 	 */
 	protected <T extends Throwable> T logException(T ex, String message,
 			Object... args) {
@@ -80,7 +78,7 @@ public abstract class AbstractLogger implements Externalizable {
 		} else if (log.isDebugEnabled()) {
 			log.debug(ex.getMessage());
 		} else {
-			log.error(format(message, args));
+			log.error(message, args);
 		}
 		return ex;
 	}
