@@ -1,18 +1,18 @@
 /*
  * Copyright 2011-2013 Erwin Müller <erwin.mueller@deventm.org>
- *
+ * 
  * This file is part of globalpom-log.
- *
+ * 
  * globalpom-log is free software: you can redistribute it and/or modify it
  * under the terms of the GNU Lesser General Public License as published by the
  * Free Software Foundation, either version 3 of the License, or (at your
  * option) any later version.
- *
- * globalpom-log is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ * 
+ * globalpom-log is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- *
+ * 
  * You should have received a copy of the GNU Lesser General Public License
  * along with globalpom-log. If not, see <http://www.gnu.org/licenses/>.
  */
@@ -104,6 +104,96 @@ public abstract class AbstractLogger implements Externalizable {
 			ClassNotFoundException {
 		contextClass = (Class<?>) in.readObject();
 		log = LoggerFactory.getLogger(contextClass);
+	}
+
+	/**
+	 * @see Logger#isTraceEnabled()
+	 * 
+	 * @since 1.14
+	 */
+	public boolean isTraceEnabled() {
+		return log.isTraceEnabled();
+	}
+
+	/**
+	 * @see Logger#trace(String, Object...)
+	 * 
+	 * @since 1.14
+	 */
+	public void trace(Object format, Object... arguments) {
+		log.trace(format.toString(), arguments);
+	}
+
+	/**
+	 * @see Logger#isDebugEnabled()
+	 * 
+	 * @since 1.14
+	 */
+	public boolean isDebugEnabled() {
+		return log.isDebugEnabled();
+	}
+
+	/**
+	 * @see Logger#debug(String, Object...)
+	 * 
+	 * @since 1.14
+	 */
+	public void debug(Object format, Object... arguments) {
+		log.debug(format.toString(), arguments);
+	}
+
+	/**
+	 * @see Logger#isInfoEnabled()
+	 * 
+	 * @since 1.14
+	 */
+	public boolean isInfoEnabled() {
+		return log.isInfoEnabled();
+	}
+
+	/**
+	 * @see Logger#info(String, Object...)
+	 * 
+	 * @since 1.14
+	 */
+	public void info(Object format, Object... arguments) {
+		log.info(format.toString(), arguments);
+	}
+
+	/**
+	 * @see Logger#isWarnEnabled()
+	 * 
+	 * @since 1.14
+	 */
+	public boolean isWarnEnabled() {
+		return log.isWarnEnabled();
+	}
+
+	/**
+	 * @see Logger#warn(String, Object...)
+	 * 
+	 * @since 1.14
+	 */
+	public void warn(Object format, Object... arguments) {
+		log.warn(format.toString(), arguments);
+	}
+
+	/**
+	 * @see Logger#isErrorEnabled()
+	 * 
+	 * @since 1.14
+	 */
+	public boolean isErrorEnabled() {
+		return log.isErrorEnabled();
+	}
+
+	/**
+	 * @see Logger#error(String, Object...)
+	 * 
+	 * @since 1.14
+	 */
+	public void error(Object format, Object... arguments) {
+		log.error(format.toString(), arguments);
 	}
 
 }
