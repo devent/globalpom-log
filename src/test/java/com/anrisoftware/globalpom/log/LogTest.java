@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2013 Erwin Müller <erwin.mueller@deventm.org>
+ * Copyright 2011-2014 Erwin Müller <erwin.mueller@deventm.org>
  *
  * This file is part of globalpom-log.
  *
@@ -23,6 +23,7 @@ import static com.anrisoftware.globalpom.utils.TestUtils.reserialize;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.anrisoftware.globalpom.exceptions.ContextException;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
@@ -52,6 +53,13 @@ public class LogTest {
 		Logger log = injector.getInstance(Logger.class);
 		log.logException();
 	}
+
+    @Test(expected = ContextException.class)
+    public void log_context_exception() throws ContextException {
+        Logger log = injector.getInstance(Logger.class);
+        String s = "cause";
+        log.logContextException(new NullPointerException(s), "foo");
+    }
 
 	private static Injector injector;
 

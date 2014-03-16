@@ -18,6 +18,8 @@
  */
 package com.anrisoftware.globalpom.log;
 
+import com.anrisoftware.globalpom.exceptions.ContextException;
+
 /**
  * Contains log messages.
  * 
@@ -26,23 +28,35 @@ package com.anrisoftware.globalpom.log;
  */
 class Logger extends AbstractLogger {
 
-	private static final String NPE_ERROR_MESSAGE = "Some NPE error in %s.";
+    private static final String CONTEXT_ERROR_MESSAGE = "Context error {}";
 
-	private static final String NPE_ERROR = "NPE error";
+    private static final String CONTEXT_ERROR = "Context error";
 
-	/**
-	 * For serialization.
-	 */
-	public Logger() {
-		super(Logger.class);
-	}
+    private static final String VALUE = "value";
 
-	void logInfo() {
-		log.info("text");
-	}
+    private static final String NPE_ERROR_MESSAGE = "Some NPE error in %s.";
 
-	void logException() {
-		throw logException(new NullPointerException(NPE_ERROR),
-				NPE_ERROR_MESSAGE, "Foo");
-	}
+    private static final String NPE_ERROR = "NPE error";
+
+    /**
+     * For serialization.
+     */
+    public Logger() {
+        super(Logger.class);
+    }
+
+    void logInfo() {
+        log.info("text");
+    }
+
+    void logException() {
+        throw logException(new NullPointerException(NPE_ERROR),
+                NPE_ERROR_MESSAGE, "Foo");
+    }
+
+    void logContextException(Exception e, Object value) throws ContextException {
+        throw logException(
+                new ContextException(CONTEXT_ERROR, e).add(VALUE, value),
+                CONTEXT_ERROR_MESSAGE, value);
+    }
 }
