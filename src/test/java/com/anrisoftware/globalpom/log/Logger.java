@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2013 Erwin Müller <erwin.mueller@deventm.org>
+ * Copyright 2011-2014 Erwin Müller <erwin.mueller@deventm.org>
  *
  * This file is part of globalpom-log.
  *
@@ -17,7 +17,6 @@
  * along with globalpom-log. If not, see <http://www.gnu.org/licenses/>.
  */
 package com.anrisoftware.globalpom.log;
-
 
 /**
  * Contains log messages.
