@@ -93,7 +93,7 @@ public class ContextException extends Exception {
 
     @Override
     public String getLocalizedMessage() {
-        return context.message(super.getLocalizedMessage());
+        return context.localizedMessage(super.getMessage());
     }
 
     @Override

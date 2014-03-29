@@ -61,6 +61,13 @@ public class LogTest {
         log.logContextException(new NullPointerException(s), "foo");
     }
 
+    @Test(expected = ContextException.class)
+    public void log_more_context_exception() throws ContextException {
+        Logger log = injector.getInstance(Logger.class);
+        String s = "cause";
+        log.logMoreContextException(new NullPointerException(s), "foo", "bar");
+    }
+
 	private static Injector injector;
 
 	@BeforeClass

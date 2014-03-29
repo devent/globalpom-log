@@ -38,6 +38,12 @@ class Logger extends AbstractLogger {
 
     private static final String NPE_ERROR = "NPE error";
 
+    private static final String VALUE_A = "a";
+
+    private static final String VALUE_B = "b";
+
+    private static final String MORE_CONTEXT_ERROR_MESSAGE = "Context error a {}, b {}.";
+
     /**
      * For serialization.
      */
@@ -58,5 +64,13 @@ class Logger extends AbstractLogger {
         throw logException(
                 new ContextException(CONTEXT_ERROR, e).add(VALUE, value),
                 CONTEXT_ERROR_MESSAGE, value);
+    }
+
+    void logMoreContextException(Exception e, Object valueA, Object valueB)
+            throws ContextException {
+        throw logException(
+                new ContextException(CONTEXT_ERROR, e).add(VALUE_A, valueA)
+                        .add(VALUE_B, valueB), MORE_CONTEXT_ERROR_MESSAGE,
+                valueA, valueB);
     }
 }

@@ -20,8 +20,11 @@ package com.anrisoftware.globalpom.exceptions;
 
 import static java.util.Collections.unmodifiableMap;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * Context for an exception.
@@ -100,6 +103,22 @@ public class Context<T extends Exception> {
     }
 
     /**
+     * Returns the exception message and the context:
+     * 
+     * <pre>
+     * Message of the exception, context:
+     * Aaa := bbb
+     * Ccc := ddd
+     * </pre>
+     */
+    public String localizedMessage(String localizedMessage) {
+        StringBuilder str = new StringBuilder();
+        str.append(localizedMessage);
+        appendContext(context, str);
+        return str.toString();
+    }
+
+    /**
      * Output the exception message and the context:
      * 
      * <pre>
@@ -119,11 +138,16 @@ public class Context<T extends Exception> {
     private void appendContext(Map<String, Object> context, StringBuilder str) {
         if (context.size() > 0) {
             str.append(", context:");
-            str.append(LINE_SEP);
-            for (Map.Entry<String, Object> entry : context.entrySet()) {
-                str.append(entry.getKey()).append(ENTRY_SEP)
-                        .append(entry.getValue());
+            str.append(LINE_SEP).append("[");
+            List<Entry<String, Object>> list = new ArrayList<Entry<String, Object>>(
+                    context.entrySet());
+            int lastIndex = list.size() - 1;
+            for (int i = 0; i < lastIndex; i++) {
+                str.append(list.get(i).getKey()).append(ENTRY_SEP)
+                        .append(list.get(i).getValue()).append(LINE_SEP);
             }
+            str.append(list.get(lastIndex).getKey()).append(ENTRY_SEP)
+                    .append(list.get(lastIndex).getValue()).append("]");
         }
     }
 
