@@ -11,7 +11,7 @@
 
 	<artifactId>globalpom-log</artifactId>
 	<version>1.16</version>
-	<name>Logging</name>
+	<name>Global POM Logging</name>
 	<description>Logger factory to inject a logger for a class.</description>
 	<url>https://www.anr-institute.com/projects/projects/globalpom-log</url>
 	<inceptionYear>2011</inceptionYear>
