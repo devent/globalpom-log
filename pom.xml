@@ -6,25 +6,25 @@
 	<parent>
 		<artifactId>globalpom-parent</artifactId>
 		<groupId>com.anrisoftware.globalpom</groupId>
-		<version>1.33</version>
+		<version>1.35</version>
 	</parent>
 
 	<artifactId>globalpom-log</artifactId>
-	<version>1.16</version>
+	<version>1.17</version>
 	<name>Global POM Logging</name>
 	<description>Logger factory to inject a logger for a class.</description>
-	<url>https://www.anr-institute.com/projects/projects/globalpom-log</url>
+	<url>https://anrisoftware.com/projects/projects/globalpom-log</url>
 	<inceptionYear>2011</inceptionYear>
 
 	<issueManagement>
 		<system>Redmine</system>
-		<url>https://www.anr-institute.com/projects/projects/globalpom-log</url>
+		<url>https://anrisoftware.com/projects/projects/globalpom-log</url>
 	</issueManagement>
 
 	<scm>
 		<connection>scm:git:${custom.gitpublic.url}globalpom-log.git</connection>
 		<developerConnection>scm:git:${custom.gitpublic.url}globalpom-log.git</developerConnection>
-		<url>https://www.anr-institute.com/gitpublic/globalpom-log.git/</url>
+		<url>https://anrisoftware.com/gitpublic/globalpom-log.git/</url>
 	</scm>
 
 	<distributionManagement>
@@ -49,7 +49,7 @@
 		<dependency>
 			<groupId>com.anrisoftware.globalpom</groupId>
 			<artifactId>globalpom-groovytestutils</artifactId>
-			<version>1.22</version>
+			<version>1.23</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
