@@ -6,11 +6,11 @@
 	<parent>
 		<artifactId>globalpom-parent</artifactId>
 		<groupId>com.anrisoftware.globalpom</groupId>
-		<version>1.35</version>
+		<version>1.37</version>
 	</parent>
 
 	<artifactId>globalpom-log</artifactId>
-	<version>1.17</version>
+	<version>1.18-SNAPSHOT</version>
 	<name>Global POM Logging</name>
 	<description>Logger factory to inject a logger for a class.</description>
 	<url>https://anrisoftware.com/projects/projects/globalpom-log</url>
@@ -24,17 +24,17 @@
 	<scm>
 		<connection>scm:git:${custom.gitpublic.url}globalpom-log.git</connection>
 		<developerConnection>scm:git:${custom.gitpublic.url}globalpom-log.git</developerConnection>
-		<url>https://anrisoftware.com/gitpublic/globalpom-log.git/</url>
+		<url>https://anrisoftware.com/projects/projects/globalpom-log</url>
 	</scm>
 
 	<distributionManagement>
 		<repository>
-			<id>${custom.repository.anrispublic.id}</id>
-			<url>${custom.repository.root}${custom.repository.anrispublic.path}</url>
+			<id>osssonatype</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
 		</repository>
 		<snapshotRepository>
-			<id>${custom.repository.anrispublicsnapshots.id}</id>
-			<url>${custom.repository.root}${custom.repository.anrispublicsnapshots.path}</url>
+			<id>osssonatype_snapshots</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
 
@@ -49,7 +49,7 @@
 		<dependency>
 			<groupId>com.anrisoftware.globalpom</groupId>
 			<artifactId>globalpom-groovytestutils</artifactId>
-			<version>1.23</version>
+			<version>1.24</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
