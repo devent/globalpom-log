@@ -28,7 +28,7 @@
  * &lt;dependency>
  * &lt;groupId>com.anrisoftware.globalpom&lt;/groupId>
  * &lt;artifactId>globalpomutils-log&lt;/artifactId>
- * &lt;version>1.16&lt;/version>
+ * &lt;version>1.19&lt;/version>
  * &lt;/dependency>
  * </pre>
  *
@@ -40,7 +40,7 @@
  * <li><a href="https://github.com/devent/globalpom-log.git">Repository HTTPS</a>
  * </ul>
  *
- * @version 1.16
+ * @version 1.19
  * @author Erwin Mueller, erwin.mueller@deventm.org
  */
 package com.anrisoftware.globalpom;

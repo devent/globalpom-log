@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Base class for a {@link Logger}.
- * 
+ *
  * @author Erwin Mueller, erwin.mueller@deventm.org
  * @since 1.0
  */
@@ -54,21 +54,21 @@ public abstract class AbstractLogger implements Externalizable {
 
     /**
      * Log the specified exception.
-     * 
+     *
      * @param ex
      *            the {@link Throwable}.
-     * 
+     *
      * @param message
      *            the message of the exception.
-     * 
+     *
      * @param args
      *            optional arguments for the message.
-     * 
+     *
      * @param <T>
      *            the exception type.
-     * 
+     *
      * @return the {@link Throwable}.
-     * 
+     *
      * @since 1.12
      */
     protected <T extends Throwable> T logException(T ex, String message,
@@ -83,7 +83,7 @@ public abstract class AbstractLogger implements Externalizable {
 
     /**
      * @see #logException(Throwable, String, Object...)
-     * 
+     *
      * @since 1.13.1
      */
     protected <T extends Throwable> T logException(T ex, Object message,
@@ -105,8 +105,19 @@ public abstract class AbstractLogger implements Externalizable {
     }
 
     /**
+     * Returns the parent logger.
+     *
+     * @return the {@link Logger}.
+     *
+     * @since 1.19
+     */
+    public Logger getLog() {
+        return log;
+    }
+
+    /**
      * @see Logger#isTraceEnabled()
-     * 
+     *
      * @since 1.14
      */
     public boolean isTraceEnabled() {
@@ -115,7 +126,7 @@ public abstract class AbstractLogger implements Externalizable {
 
     /**
      * @see Logger#trace(String, Object...)
-     * 
+     *
      * @since 1.14
      */
     public void trace(Object format, Object... arguments) {
@@ -124,7 +135,7 @@ public abstract class AbstractLogger implements Externalizable {
 
     /**
      * @see Logger#isDebugEnabled()
-     * 
+     *
      * @since 1.14
      */
     public boolean isDebugEnabled() {
@@ -133,7 +144,7 @@ public abstract class AbstractLogger implements Externalizable {
 
     /**
      * @see Logger#debug(String, Object...)
-     * 
+     *
      * @since 1.14
      */
     public void debug(Object format, Object... arguments) {
@@ -142,7 +153,7 @@ public abstract class AbstractLogger implements Externalizable {
 
     /**
      * @see Logger#isInfoEnabled()
-     * 
+     *
      * @since 1.14
      */
     public boolean isInfoEnabled() {
@@ -151,7 +162,7 @@ public abstract class AbstractLogger implements Externalizable {
 
     /**
      * @see Logger#info(String, Object...)
-     * 
+     *
      * @since 1.14
      */
     public void info(Object format, Object... arguments) {
@@ -160,7 +171,7 @@ public abstract class AbstractLogger implements Externalizable {
 
     /**
      * @see Logger#isWarnEnabled()
-     * 
+     *
      * @since 1.14
      */
     public boolean isWarnEnabled() {
@@ -169,7 +180,7 @@ public abstract class AbstractLogger implements Externalizable {
 
     /**
      * @see Logger#warn(String, Object...)
-     * 
+     *
      * @since 1.14
      */
     public void warn(Object format, Object... arguments) {
@@ -178,7 +189,7 @@ public abstract class AbstractLogger implements Externalizable {
 
     /**
      * @see Logger#isErrorEnabled()
-     * 
+     *
      * @since 1.14
      */
     public boolean isErrorEnabled() {
@@ -187,7 +198,7 @@ public abstract class AbstractLogger implements Externalizable {
 
     /**
      * @see Logger#error(String, Object...)
-     * 
+     *
      * @since 1.14
      */
     public void error(Object format, Object... arguments) {
