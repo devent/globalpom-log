@@ -6,19 +6,15 @@
 	<parent>
 		<artifactId>globalpom-parent</artifactId>
 		<groupId>com.anrisoftware.globalpom</groupId>
-		<version>1.38</version>
+		<version>1.39</version>
 	</parent>
 
 	<artifactId>globalpom-log</artifactId>
-	<version>1.19</version>
+	<version>1.20-SNAPSHOT</version>
 	<name>Global POM Logging</name>
 	<description>Logger factory to inject a logger for a class.</description>
 	<url>https://anrisoftware.com/projects/projects/globalpom-log</url>
 	<inceptionYear>2011</inceptionYear>
-
-	<properties>
-		<project.custom.current.year>2015</project.custom.current.year>
-	</properties>
 
 	<issueManagement>
 		<system>Redmine</system>
@@ -26,12 +22,16 @@
 	</issueManagement>
 
 	<scm>
-		<connection>scm:git:${custom.gitpublic.url}globalpom-log.git</connection>
-		<developerConnection>scm:git:${custom.gitpublic.url}globalpom-log.git</developerConnection>
-		<url>https://anrisoftware.com/projects/projects/globalpom-log</url>
+		<connection>scm:git:git@anrisoftware.com:globalpom-log.git</connection>
+		<developerConnection>scm:git:git@anrisoftware.com:globalpom-log.git</developerConnection>
+		<url>https://anrisoftware.com/projects/projects/globalpom-log/repository</url>
 	</scm>
 
 	<distributionManagement>
+        <site>
+          <id>anrisoftware</id>
+          <url>dav:https://anrisoftware.com/javadoc/${project.groupId}/${project.artifactId}</url>
+        </site>
 		<repository>
 			<id>osssonatype</id>
 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
@@ -53,7 +53,7 @@
 		<dependency>
 			<groupId>com.anrisoftware.globalpom</groupId>
 			<artifactId>globalpom-groovytestutils</artifactId>
-			<version>1.24</version>
+			<version>1.25-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

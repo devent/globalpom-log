@@ -28,19 +28,19 @@
  * &lt;dependency>
  * &lt;groupId>com.anrisoftware.globalpom&lt;/groupId>
  * &lt;artifactId>globalpomutils-log&lt;/artifactId>
- * &lt;version>1.19&lt;/version>
+ * &lt;version>1.20&lt;/version>
  * &lt;/dependency>
  * </pre>
  *
- * <h2>GitHub SCM</h2>
+ * <h2>SCM</h2>
  *
  * <ul>
- * <li><a href="https://github.com/devent/globalpom-log.git">Repository</a></li>
- * <li><a href="git://git@github.com:devent/globalpom-log.git">Repository SSH</a>
- * <li><a href="https://github.com/devent/globalpom-log.git">Repository HTTPS</a>
+ * <li><a href="https://anrisoftware.com/projects/projects/globalpom-groovy/repository">Repository</a></li>
+ * <li><a href="git@anrisoftware.com:globalpom-groovy.git">SSH Access</a>
+ * <li><a href="https://github.com/devent/globalpom-log.git">Github Mirror</a>
  * </ul>
  *
- * @version 1.19
+ * @version 1.20
  * @author Erwin Mueller, erwin.mueller@deventm.org
  */
 package com.anrisoftware.globalpom;

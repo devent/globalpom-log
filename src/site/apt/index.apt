@@ -1,0 +1,221 @@
+~~
+~~ Copyright 2011-2015 Erwin Müller <erwin.mueller@deventm.org>
+~~
+~~ This file is part of globalpom-log.
+~~
+~~ globalpom-log is free software: you can redistribute it and/or modify it
+~~ under the terms of the GNU Lesser General Public License as published by the
+~~ Free Software Foundation, either version 3 of the License, or (at your
+~~ option) any later version.
+~~
+~~ globalpom-log is distributed in the hope that it will be useful, but
+~~ WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+~~ FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+~~ details.
+~~
+~~ You should have received a copy of the GNU Lesser General Public License
+~~ along with globalpom-log. If not, see <http://www.gnu.org/licenses/>.
+~~
+
+  Logger factory to inject a logger for a class.
+
+Anrisoftware.com SCM
+
+  * {{{https://anrisoftware.com/projects/projects/globalpom-groovy/repository}Repository}}
+
+  * {{{git@anrisoftware.com:globalpom-groovy.git}SSH Access}}
+
+GitHub SCM
+
+  * {{{https://github.com/devent/globalpom-groovy}Repository}}
+
+  * {{{git@github.com:devent/globalpom-groovy.git}SSH Access}}
+
+Maven Module
+
+---
+<dependency>
+    <groupId>com.anrisoftware.globalpom</groupId>
+    <artifactId>globalpom-log</artifactId>
+    <version>1.20</version>
+</dependency>
+---
+
+Description
+
+  The logging framework makes it easier to separate logging messages from the
+production code. Instead of having logging messages all around the code, the
+messages are all put together in one logging class and the class is injected
+into the client class.
+
+---
+/**
+ * Logging messages for {@link Foo}.
+ */
+@Singleton
+class FooLogger extends AbstractLogger {
+
+    /**
+     * Create logger for {@link Foo}.
+     */
+    FooLogger() {
+        super(Foo.class);
+    }
+
+    void loggingMessage(Foo foo) {
+        if (isDebugEnabled()) {
+            debug("Debug logging message for {}.", foo);
+        } else {
+            info("Info logging message for {}.", foo);
+        }
+    }
+}
+
+/**
+ * Production class.
+ */
+class Foo {
+
+    @Inject
+    private FooLogger log;
+
+    public void method() {
+        log.loggingMessage(this);
+    }
+}
+---
+
+  For static logging messages a simple enumeration can be defined and the
+constants used as logging messages strings. The enumeration must be package
+public so that Java's static imports can be used to simplify the code.
+
+---
+/**
+ * Logging messages for {@link Foo}.
+ */
+@Singleton
+class FooLogger extends AbstractLogger {
+
+    enum _ {
+
+        logging_message_debug("Debug logging message for {}."),
+
+        logging_message_info("Info logging message for {}.");
+
+        private String name;
+
+        private _(String name) {
+            this.name = name;
+        }
+
+        @Override
+        public String toString() {
+            return name;
+        }
+    }
+
+    /**
+     * Create logger for {@link Foo}.
+     */
+    FooLogger() {
+        super(Foo.class);
+    }
+
+    void loggingMessage(Foo foo) {
+        if (isDebugEnabled()) {
+            debug(logging_message_debug, foo);
+        } else {
+            info(logging_message_info, foo);
+        }
+    }
+}
+---
+
+  Further, to dynamically load logging messages with internationalization
+support, the resources-texts project can be used.
+
+---
+/**
+ * Logging messages for {@link Foo}.
+ */
+@Singleton
+class FooLogger extends AbstractLogger {
+
+    enum _ {
+
+        logging_message_debug,
+
+        logging_message_info;
+
+        /**
+         * Retrieves the text resources for the logging messages.
+         *
+         * @param texts
+         *            the texts {@link Texts} resources.
+         */
+        public static void retrieveResources(Texts texts) {
+            for (_ value : values()) {
+                value.setText(texts);
+            }
+        }
+
+        private String name;
+
+        private String text;
+
+        private _(String name) {
+            this.name = name;
+        }
+
+        /**
+         * Retrieve the text resource for the logging message.
+         *
+         * @param texts
+         *            the texts {@link Texts} resources.
+         */
+        public void setText(Texts texts) {
+            this.text = texts.getResource(name).getText();
+        }
+
+        @Override
+        public String toString() {
+            return text;
+        }
+    }
+
+    /**
+     * Create logger for {@link Foo}.
+     */
+    FooLogger() {
+        super(Foo.class);
+    }
+
+    /**
+     * Retrieves the text resources for the logging messages.
+     *
+     * @param texts
+     *            the texts {@link Texts} resources.
+     */
+    public void retrieveResources(Texts texts) {
+        _.retrieveResources(texts);
+    }
+
+    void loggingMessage(Foo foo) {
+        if (isDebugEnabled()) {
+            debug(logging_message_debug, foo);
+        } else {
+            info(logging_message_info, foo);
+        }
+    }
+}
+---
+
+  In addition to the logging framework, an exception context for unchecked and
+checked exceptions is made available. The classes
+ContextRuntimeException and ContextException offer an example how to create
+such contexted exceptions. After creating such exception, the context can be
+added with the ContextException#add() methods.
+
+---
+throw new ContextException(message, cause).add("foo", contextFoo).add("bar", contextBar);
+---
