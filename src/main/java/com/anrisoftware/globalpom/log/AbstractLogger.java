@@ -130,7 +130,9 @@ public abstract class AbstractLogger implements Externalizable {
      * @since 1.14
      */
     public void trace(Object format, Object... arguments) {
-        log.trace(format.toString(), arguments);
+        if (log.isTraceEnabled()) {
+            log.trace(format.toString(), arguments);
+        }
     }
 
     /**
@@ -148,7 +150,9 @@ public abstract class AbstractLogger implements Externalizable {
      * @since 1.14
      */
     public void debug(Object format, Object... arguments) {
-        log.debug(format.toString(), arguments);
+        if (log.isDebugEnabled()) {
+            log.debug(format.toString(), arguments);
+        }
     }
 
     /**
@@ -166,7 +170,9 @@ public abstract class AbstractLogger implements Externalizable {
      * @since 1.14
      */
     public void info(Object format, Object... arguments) {
-        log.info(format.toString(), arguments);
+        if (log.isInfoEnabled()) {
+            log.info(format.toString(), arguments);
+        }
     }
 
     /**
@@ -184,7 +190,9 @@ public abstract class AbstractLogger implements Externalizable {
      * @since 1.14
      */
     public void warn(Object format, Object... arguments) {
-        log.warn(format.toString(), arguments);
+        if (log.isWarnEnabled()) {
+            log.warn(format.toString(), arguments);
+        }
     }
 
     /**
@@ -202,7 +210,9 @@ public abstract class AbstractLogger implements Externalizable {
      * @since 1.14
      */
     public void error(Object format, Object... arguments) {
-        log.error(format.toString(), arguments);
+        if (log.isErrorEnabled()) {
+            log.error(format.toString(), arguments);
+        }
     }
 
 }
