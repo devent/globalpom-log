@@ -17,30 +17,6 @@
 ~~ along with globalpom-log. If not, see <http://www.gnu.org/licenses/>.
 ~~
 
-  Logger factory to inject a logger for a class.
-
-Anrisoftware.com SCM
-
-  * {{{https://anrisoftware.com/projects/projects/globalpom-groovy/repository}Repository}}
-
-  * {{{git@anrisoftware.com:globalpom-groovy.git}SSH Access}}
-
-GitHub SCM
-
-  * {{{https://github.com/devent/globalpom-groovy}Repository}}
-
-  * {{{git@github.com:devent/globalpom-groovy.git}SSH Access}}
-
-Maven Module
-
----
-<dependency>
-    <groupId>com.anrisoftware.globalpom</groupId>
-    <artifactId>globalpom-log</artifactId>
-    <version>1.20</version>
-</dependency>
----
-
 Description
 
   The logging framework makes it easier to separate logging messages from the
@@ -218,4 +194,24 @@ added with the ContextException#add() methods.
 
 ---
 throw new ContextException(message, cause).add("foo", contextFoo).add("bar", contextBar);
+---
+
+SCM
+
+  * {{{https://anrisoftware.com/projects/projects/prefdialog-public/repository}Main Repository}}
+
+  * git@anrisoftware.com:prefdialog.git
+
+  * {{{https://github.com/devent/prefdialog}Github Mirror Repository}}
+
+  * git@anrisoftware.com:prefdialog.git
+
+Maven
+
+---
+<dependency>
+    <groupId>com.anrisoftware.globalpom</groupId>
+    <artifactId>globalpom-log</artifactId>
+    <version>1.21</version>
+</dependency>
 ---
