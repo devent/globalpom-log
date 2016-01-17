@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2015 Erwin Müller <erwin.mueller@deventm.org>
+ * Copyright 2011-2016 Erwin Müller <erwin.mueller@deventm.org>
  *
  * This file is part of globalpom-log.
  *
@@ -28,7 +28,7 @@
  * &lt;dependency>
  * &lt;groupId>com.anrisoftware.globalpom&lt;/groupId>
  * &lt;artifactId>globalpomutils-log&lt;/artifactId>
- * &lt;version>1.20&lt;/version>
+ * &lt;version>2.0&lt;/version>
  * &lt;/dependency>
  * </pre>
  *
@@ -40,7 +40,7 @@
  * <li><a href="https://github.com/devent/globalpom-log.git">Github Mirror</a>
  * </ul>
  *
- * @version 1.20
+ * @version 2.0
  * @author Erwin Mueller, erwin.mueller@deventm.org
  */
 package com.anrisoftware.globalpom;
