@@ -1,46 +1,26 @@
 /*
  * Copyright 2011-2016 Erwin Müller <erwin.mueller@deventm.org>
  *
- * This file is part of globalpom-log.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * globalpom-log is free software: you can redistribute it and/or modify it
- * under the terms of the GNU Lesser General Public License as published by the
- * Free Software Foundation, either version 3 of the License, or (at your
- * option) any later version.
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
- * globalpom-log is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
- *
- * You should have received a copy of the GNU Lesser General Public License
- * along with globalpom-log. If not, see <http://www.gnu.org/licenses/>.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 /**
  * <h1>Global POM Logging</h1>
  *
  * <p>
  * Logger factory to inject a logger for a class.
+ * </p>
  *
- * <h2>Maven Module</h2>
- *
- * <pre>
- * &lt;dependency>
- * &lt;groupId>com.anrisoftware.globalpom&lt;/groupId>
- * &lt;artifactId>globalpomutils-log&lt;/artifactId>
- * &lt;version>2.0&lt;/version>
- * &lt;/dependency>
- * </pre>
- *
- * <h2>SCM</h2>
- *
- * <ul>
- * <li><a href="https://anrisoftware.com/projects/projects/globalpom-groovy/repository">Repository</a></li>
- * <li><a href="git@anrisoftware.com:globalpom-groovy.git">SSH Access</a>
- * <li><a href="https://github.com/devent/globalpom-log.git">Github Mirror</a>
- * </ul>
- *
- * @version 2.0
+ * @version 2.1
  * @author Erwin Mueller, erwin.mueller@deventm.org
  */
 package com.anrisoftware.globalpom;

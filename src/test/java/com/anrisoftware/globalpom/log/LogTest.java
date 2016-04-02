@@ -1,20 +1,17 @@
 /*
  * Copyright 2011-2016 Erwin Müller <erwin.mueller@deventm.org>
  *
- * This file is part of globalpom-log.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * globalpom-log is free software: you can redistribute it and/or modify it
- * under the terms of the GNU Lesser General Public License as published by the
- * Free Software Foundation, either version 3 of the License, or (at your
- * option) any later version.
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
- * globalpom-log is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
- *
- * You should have received a copy of the GNU Lesser General Public License
- * along with globalpom-log. If not, see <http://www.gnu.org/licenses/>.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package com.anrisoftware.globalpom.log;
 
@@ -23,13 +20,12 @@ import static com.anrisoftware.globalpom.utils.TestUtils.reserialize;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.anrisoftware.globalpom.exceptions.ContextException;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
 /**
  * Test the abstract logger factory.
- * 
+ *
  * @author Erwin Mueller, erwin.mueller@deventm.org
  * @since 1.4
  */
@@ -54,15 +50,15 @@ public class LogTest {
 		log.logException();
 	}
 
-    @Test(expected = ContextException.class)
-    public void log_context_exception() throws ContextException {
+    @Test(expected = RuntimeException.class)
+    public void log_context_exception() {
         Logger log = injector.getInstance(Logger.class);
         String s = "cause";
         log.logContextException(new NullPointerException(s), "foo");
     }
 
-    @Test(expected = ContextException.class)
-    public void log_more_context_exception() throws ContextException {
+    @Test(expected = RuntimeException.class)
+    public void log_more_context_exception() {
         Logger log = injector.getInstance(Logger.class);
         String s = "cause";
         log.logMoreContextException(new NullPointerException(s), "foo", "bar");
