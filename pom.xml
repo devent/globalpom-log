@@ -1,121 +1,121 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<artifactId>globalpom-parent</artifactId>
-		<groupId>com.anrisoftware.globalpom</groupId>
-		<version>2.2</version>
-	</parent>
+    <parent>
+        <artifactId>globalpom-parent</artifactId>
+        <groupId>com.anrisoftware.globalpom</groupId>
+        <version>2.3-SNAPSHOT</version>
+    </parent>
 
-	<artifactId>globalpom-log</artifactId>
-	<name>Global POM Logging</name>
-	<version>2.2-SNAPSHOT</version>
-	<description>Logger factory to inject a logger for a class.</description>
-	<url>https://anrisoftware.com/projects/projects/globalpom-log</url>
-	<inceptionYear>2011</inceptionYear>
-	<packaging>bundle</packaging>
+    <artifactId>globalpom-log</artifactId>
+    <name>Global POM Logging</name>
+    <version>2.2-SNAPSHOT</version>
+    <description>Logger factory to inject a logger for a class.</description>
+    <url>https://anrisoftware.com/projects/projects/globalpom-log</url>
+    <inceptionYear>2011</inceptionYear>
+    <packaging>bundle</packaging>
 
-	<properties>
-		<project.custom.bundle.namespace>com.anrisoftware.sscontrol</project.custom.bundle.namespace>
-		<project.custom.bundle.namespace.internal>com.anrisoftware.sscontrol.internal</project.custom.bundle.namespace.internal>
-	</properties>
+    <properties>
+        <project.custom.bundle.namespace>com.anrisoftware.sscontrol</project.custom.bundle.namespace>
+        <project.custom.bundle.namespace.internal>com.anrisoftware.sscontrol.internal</project.custom.bundle.namespace.internal>
+    </properties>
 
-	<issueManagement>
-		<system>Redmine</system>
-		<url>https://anrisoftware.com/projects/projects/globalpom-log</url>
-	</issueManagement>
+    <issueManagement>
+        <system>Redmine</system>
+        <url>https://anrisoftware.com/projects/projects/globalpom-log</url>
+    </issueManagement>
 
-	<developers>
-		<developer>
-			<id>EM</id>
-			<name>Erwin Müller</name>
-			<organization>Advanced Natural Research Insitute</organization>
-			<email>erwin.mueller@deventm.org</email>
-			<roles>
-				<role>Owner</role>
-				<role>Developer</role>
-			</roles>
-			<timezone>Europe/Berlin</timezone>
-		</developer>
-	</developers>
+    <developers>
+        <developer>
+            <id>EM</id>
+            <name>Erwin Müller</name>
+            <organization>Advanced Natural Research Insitute</organization>
+            <email>erwin.mueller@deventm.org</email>
+            <roles>
+                <role>Owner</role>
+                <role>Developer</role>
+            </roles>
+            <timezone>Europe/Berlin</timezone>
+        </developer>
+    </developers>
 
-	<licenses>
-		<license>
-			<name>Apache License, Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
-			<distribution>repo</distribution>
-		</license>
-	</licenses>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
-	<scm>
-		<connection>scm:git:git@anrisoftware.com:globalpom-log.git</connection>
-		<developerConnection>scm:git:git@anrisoftware.com:globalpom-log.git</developerConnection>
-		<url>https://anrisoftware.com/projects/projects/globalpom-log/repository</url>
-	</scm>
+    <scm>
+        <connection>scm:git:git@anrisoftware.com:globalpom-log.git</connection>
+        <developerConnection>scm:git:git@anrisoftware.com:globalpom-log.git</developerConnection>
+        <url>https://anrisoftware.com/projects/projects/globalpom-log/repository</url>
+    </scm>
 
-	<distributionManagement>
-		<site>
-			<id>anrisoftware</id>
-			<url>dav:https://anrisoftware.com/javadoc/${project.groupId}/${project.artifactId}</url>
-		</site>
-		<repository>
-			<id>osssonatype</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-		</repository>
-		<snapshotRepository>
-			<id>osssonatype_snapshots</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
-	</distributionManagement>
+    <distributionManagement>
+        <site>
+            <id>anrisoftware</id>
+            <url>dav:https://anrisoftware.com/javadoc/${project.groupId}/${project.artifactId}</url>
+        </site>
+        <repository>
+            <id>osssonatype</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+        </repository>
+        <snapshotRepository>
+            <id>osssonatype_snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 
-	<dependencies>
+    <dependencies>
 
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
 
-		<!-- test dependencies -->
-		<dependency>
-			<groupId>com.google.inject.extensions</groupId>
-			<artifactId>guice-assistedinject</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.anrisoftware.globalpom</groupId>
-			<artifactId>globalpom-groovytestutils</artifactId>
-			<version>2.2-SNAPSHOT</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+        <!-- test dependencies -->
+        <dependency>
+            <groupId>com.google.inject.extensions</groupId>
+            <artifactId>guice-assistedinject</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.anrisoftware.globalpom</groupId>
+            <artifactId>globalpom-groovytestutils</artifactId>
+            <version>2.2-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
-	<build>
-		<resources>
-			<resource>
-				<directory>src/test/resources</directory>
-				<filtering>true</filtering>
-				<includes>
-					<include>logback.properties</include>
-				</includes>
-			</resource>
-		</resources>
+    <build>
+        <resources>
+            <resource>
+                <directory>src/test/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>logback.properties</include>
+                </includes>
+            </resource>
+        </resources>
 
-		<plugins>
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<extensions>true</extensions>
-				<configuration>
-					<Export-Package>!${project.custom.bundle.namespace.internal}.*,${project.custom.bundle.namespace}.*;version="${project.version}"</Export-Package>
-					<Private-Package>${project.custom.bundle.namespace.internal}.*</Private-Package>
-					<instructions>
-						<_include>osgi.bnd</_include>
-					</instructions>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <Export-Package>!${project.custom.bundle.namespace.internal}.*,${project.custom.bundle.namespace}.*;version="${project.version}"</Export-Package>
+                    <Private-Package>${project.custom.bundle.namespace.internal}.*</Private-Package>
+                    <instructions>
+                        <_include>osgi.bnd</_include>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
