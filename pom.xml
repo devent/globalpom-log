@@ -6,12 +6,12 @@
     <parent>
         <artifactId>globalpom-parent</artifactId>
         <groupId>com.anrisoftware.globalpom</groupId>
-        <version>2.3-SNAPSHOT</version>
+        <version>2.3</version>
     </parent>
 
     <artifactId>globalpom-log</artifactId>
     <name>Global POM Logging</name>
-    <version>2.2-SNAPSHOT</version>
+    <version>2.2</version>
     <description>Logger factory to inject a logger for a class.</description>
     <url>https://anrisoftware.com/projects/projects/globalpom-log</url>
     <inceptionYear>2011</inceptionYear>
@@ -86,7 +86,7 @@
         <dependency>
             <groupId>com.anrisoftware.globalpom</groupId>
             <artifactId>globalpom-groovytestutils</artifactId>
-            <version>2.2-SNAPSHOT</version>
+            <version>2.2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
