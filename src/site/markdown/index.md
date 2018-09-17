@@ -1,13 +1,18 @@
--   ![](https://project.anrisoftware.com/attachments/download/217/apache2.0-small.gif) (© 2011-2018 Erwin Müller)
+-   ![](https://project.anrisoftware.com/attachments/download/217/apache2.0-small.gif)
+    (© 2011-2018 Erwin Müller)
 -   [Maven Central](https://search.maven.org/search?q=a:globalpom-log)
--   [Source main](https://gitea.anrisoftware.com/anrisoftware.com/globalpom-log)
+-   [Source
+    main](https://gitea.anrisoftware.com/anrisoftware.com/globalpom-log)
 -   [Source mirror](https://github.com/devent/globalpom-log)
 -   [Documentation](https://javadoc.anrisoftware.com/com.anrisoftware.globalpom/globalpom-log/)
 
 Description
 ===========
 
-The logging framework makes it easier to separate logging messages from the production code. Instead of having logging messages all around the code, the messages are all put together in one logging class and the class is injected into the client class.
+The logging framework makes it easier to separate logging messages from
+the production code. Instead of having logging messages all around the
+code, the messages are all put together in one logging class and the
+class is injected into the client class.
 
     /**
      * Logging messages for {@link Foo}.
@@ -44,7 +49,10 @@ The logging framework makes it easier to separate logging messages from the prod
         }
     }
 
-For static logging messages a simple enumeration can be defined and the constants used as logging messages strings. The enumeration must be package public so that Java’s static imports can be used to simplify the code.
+For static logging messages a simple enumeration can be defined and the
+constants used as logging messages strings. The enumeration must be
+package public so that Java’s static imports can be used to simplify the
+code.
 
     /**
      * Logging messages for {@link Foo}.
@@ -86,7 +94,8 @@ For static logging messages a simple enumeration can be defined and the constant
         }
     }
 
-Further, to dynamically load logging messages with internationalization support, the resources-texts project can be used.
+Further, to dynamically load logging messages with internationalization
+support, the resources-texts project can be used.
 
     /**
      * Logging messages for {@link Foo}.
@@ -167,9 +176,15 @@ License
 
 Copyright 2011-2018 Erwin Müller <erwin.mueller@deventm.org>
 
-Licensed under the Apache License, Version 2.0 (the “License”); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the “License”); you may
+not use this file except in compliance with the License. You may obtain
+a copy of the License at
 
 http://www.apache.org/licenses/LICENSE-2.0
 
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an “AS IS” BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 
