@@ -54,6 +54,21 @@
       <tag>globalpom-log-4.2.1</tag>
   </scm>
 
+    <distributionManagement>
+        <site>
+            <id>site-ssh</id>
+            <url>${site.ssh.url}</url>
+        </site>
+        <repository>
+            <id>public_releases</id>
+            <url>https://maven.anrisoftware.com/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>public_snapshots</id>
+            <url>https://maven.anrisoftware.com/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <dependencies>
 
         <dependency>
