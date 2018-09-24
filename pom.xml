@@ -5,19 +5,19 @@
     <parent>
         <artifactId>globalpom-parent</artifactId>
         <groupId>com.anrisoftware.globalpom</groupId>
-        <version>4.2.1</version>
+        <version>4.4.0</version>
     </parent>
 
     <artifactId>globalpom-log</artifactId>
     <name>Global POM Logging</name>
-    <version>4.2.2-SNAPSHOT</version>
+    <version>4.4.0-SNAPSHOT</version>
     <description>Logger factory to inject a logger for a class.</description>
     <inceptionYear>2011</inceptionYear>
     <packaging>bundle</packaging>
 
     <properties>
-        <project.custom.bundle.namespace>com.anrisoftware.sscontrol</project.custom.bundle.namespace>
-        <project.custom.bundle.namespace.internal>com.anrisoftware.sscontrol.internal</project.custom.bundle.namespace.internal>
+        <project.custom.bundle.namespace>com.anrisoftware.globalpom.log</project.custom.bundle.namespace>
+        <project.custom.bundle.namespace.internal>com.anrisoftware.globalpom.log.internal</project.custom.bundle.namespace.internal>
     </properties>
 
     <developers>
@@ -54,6 +54,21 @@
       <tag>HEAD</tag>
   </scm>
 
+    <distributionManagement>
+        <site>
+            <id>site-ssh</id>
+            <url>${site.ssh.url}</url>
+        </site>
+        <repository>
+            <id>public_releases</id>
+            <url>https://maven.anrisoftware.com/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>public_snapshots</id>
+            <url>https://maven.anrisoftware.com/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <dependencies>
 
         <dependency>
@@ -70,7 +85,7 @@
         <dependency>
             <groupId>com.anrisoftware.globalpom</groupId>
             <artifactId>globalpom-groovytestutils</artifactId>
-            <version>4.2.1</version>
+            <version>4.4.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -85,18 +100,35 @@
                 </includes>
             </resource>
         </resources>
-
         <plugins>
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
                 <extensions>true</extensions>
+                <executions>
+                    <!-- Configure extra execution of 'manifest' in process-classes 
+                        phase to make sure SCR metadata is generated before unit test runs -->
+                    <execution>
+                        <id>scr-metadata</id>
+                        <goals>
+                            <goal>manifest</goal>
+                        </goals>
+                        <configuration>
+                            <supportIncrementalBuild>true</supportIncrementalBuild>
+                        </configuration>
+                    </execution>
+                </executions>
                 <configuration>
                     <Export-Package>!${project.custom.bundle.namespace.internal}.*,${project.custom.bundle.namespace}.*;version="${project.version}"</Export-Package>
-                    <Private-Package>${project.custom.bundle.namespace.internal}.*</Private-Package>
+                    <Private-Package>${project.custom.bundlle.namespace.internal}.*</Private-Package>
                     <instructions>
                         <_include>osgi.bnd</_include>
+                        <_dsannotations>*</_dsannotations>
+                        <_metatypeannotations>*</_metatypeannotations>
                     </instructions>
+                    <!-- Export SCR metadata to classpath to have them available 
+                        in unit tests -->
+                    <exportScr>true</exportScr>
                 </configuration>
             </plugin>
         </plugins>

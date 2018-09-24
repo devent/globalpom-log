@@ -1,5 +1,3 @@
-package com.anrisoftware.globalpom.log;
-
 /*-
  * #%L
  * Global POM Logging
@@ -20,11 +18,13 @@ package com.anrisoftware.globalpom.log;
  * #L%
  */
 
+package com.anrisoftware.globalpom.log;
+
 import static com.anrisoftware.globalpom.utils.TestUtils.reserialize;
 
-import org.junit.BeforeClass;
-import org.junit.Test;
-
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
@@ -36,43 +36,49 @@ import com.google.inject.Injector;
  */
 public class LogTest {
 
-	@Test
-	public void serialize_and_deserialize_logger() {
-		Logger log = injector.getInstance(Logger.class);
-		log = (Logger) reserialize(log);
-		log.logInfo();
-	}
+    @Test
+    public void serialize_and_deserialize_logger() {
+        Logger log = injector.getInstance(Logger.class);
+        log = (Logger) reserialize(log);
+        log.logInfo();
+    }
 
-	@Test
-	public void log_info() {
-		Logger log = injector.getInstance(Logger.class);
-		log.logInfo();
-	}
+    @Test
+    public void log_info() {
+        Logger log = injector.getInstance(Logger.class);
+        log.logInfo();
+    }
 
-	@Test(expected = NullPointerException.class)
-	public void log_exception() {
-		Logger log = injector.getInstance(Logger.class);
-		log.logException();
-	}
+    @Test
+    public void log_exception() {
+        assertThrows(NullPointerException.class, () -> {
+            Logger log = injector.getInstance(Logger.class);
+            log.logException();
+        });
+    }
 
-    @Test(expected = RuntimeException.class)
+    @Test
     public void log_context_exception() {
-        Logger log = injector.getInstance(Logger.class);
-        String s = "cause";
-        log.logContextException(new NullPointerException(s), "foo");
+        assertThrows(RuntimeException.class, () -> {
+            Logger log = injector.getInstance(Logger.class);
+            String s = "cause";
+            log.logContextException(new NullPointerException(s), "foo");
+        });
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test
     public void log_more_context_exception() {
-        Logger log = injector.getInstance(Logger.class);
-        String s = "cause";
-        log.logMoreContextException(new NullPointerException(s), "foo", "bar");
+        assertThrows(RuntimeException.class, () -> {
+            Logger log = injector.getInstance(Logger.class);
+            String s = "cause";
+            log.logMoreContextException(new NullPointerException(s), "foo", "bar");
+        });
     }
 
-	private static Injector injector;
+    private static Injector injector;
 
-	@BeforeClass
-	public static void createInjector() {
-		injector = Guice.createInjector();
-	}
+    @BeforeAll
+    public static void createInjector() {
+        injector = Guice.createInjector();
+    }
 }
