@@ -1,5 +1,3 @@
-package com.anrisoftware.globalpom.log;
-
 /*-
  * #%L
  * Global POM Logging
@@ -19,6 +17,8 @@ package com.anrisoftware.globalpom.log;
  * limitations under the License.
  * #L%
  */
+
+package com.anrisoftware.globalpom.log;
 
 import java.io.Externalizable;
 import java.io.IOException;
@@ -57,24 +57,19 @@ public abstract class AbstractLogger implements Externalizable {
     /**
      * Log the specified exception.
      *
-     * @param ex
-     *            the {@link Throwable}.
+     * @param ex      the {@link Throwable}.
      *
-     * @param message
-     *            the message of the exception.
+     * @param message the message of the exception.
      *
-     * @param args
-     *            optional arguments for the message.
+     * @param args    optional arguments for the message.
      *
-     * @param <T>
-     *            the exception type.
+     * @param         <T> the exception type.
      *
      * @return the {@link Throwable}.
      *
      * @since 1.12
      */
-    protected <T extends Throwable> T logException(T ex, String message,
-            Object... args) {
+    protected <T extends Throwable> T logException(T ex, String message, Object... args) {
         if (log.isDebugEnabled()) {
             log.error(ex.getMessage(), ex);
         } else {
@@ -88,8 +83,7 @@ public abstract class AbstractLogger implements Externalizable {
      *
      * @since 1.13.1
      */
-    protected <T extends Throwable> T logException(T ex, Object message,
-            Object... args) {
+    protected <T extends Throwable> T logException(T ex, Object message, Object... args) {
         return logException(ex, message.toString(), args);
     }
 
@@ -100,8 +94,7 @@ public abstract class AbstractLogger implements Externalizable {
     }
 
     @Override
-    public void readExternal(ObjectInput in) throws IOException,
-            ClassNotFoundException {
+    public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
         contextClass = (Class<?>) in.readObject();
         log = LoggerFactory.getLogger(contextClass);
     }

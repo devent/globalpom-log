@@ -1,5 +1,3 @@
-package com.anrisoftware.globalpom.log;
-
 /*-
  * #%L
  * Global POM Logging
@@ -19,6 +17,8 @@ package com.anrisoftware.globalpom.log;
  * limitations under the License.
  * #L%
  */
+
+package com.anrisoftware.globalpom.log;
 
 /**
  * Logger messages template.
@@ -43,7 +43,7 @@ enum LoggerMessages {
 	 */
 	public static void retrieveResources(Texts texts) {
 		for (LoggerMessages value : values()) {
-			value.setText(texts);
+			value.setTexts(texts);
 		}
 	}
 
@@ -61,7 +61,7 @@ enum LoggerMessages {
 	 * @param texts
 	 *            the texts {@link Texts} resources.
 	 */
-	public void setText(Texts texts) {
+	public void setTexts(Texts texts) {
 		this.text = texts.getResource(name).getText();
 	}
 

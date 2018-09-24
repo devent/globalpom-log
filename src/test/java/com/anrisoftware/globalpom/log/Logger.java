@@ -1,5 +1,3 @@
-package com.anrisoftware.globalpom.log;
-
 /*-
  * #%L
  * Global POM Logging
@@ -19,6 +17,8 @@ package com.anrisoftware.globalpom.log;
  * limitations under the License.
  * #L%
  */
+
+package com.anrisoftware.globalpom.log;
 
 /**
  * Contains log messages.
@@ -50,17 +50,14 @@ class Logger extends AbstractLogger {
     }
 
     void logException() {
-        throw logException(new NullPointerException(NPE_ERROR),
-                NPE_ERROR_MESSAGE, "Foo");
+        throw logException(new NullPointerException(NPE_ERROR), NPE_ERROR_MESSAGE, "Foo");
     }
 
     void logContextException(Exception e, Object value) {
-        throw logException(new RuntimeException(CONTEXT_ERROR, e),
-                CONTEXT_ERROR_MESSAGE, value);
+        throw logException(new RuntimeException(CONTEXT_ERROR, e), CONTEXT_ERROR_MESSAGE, value);
     }
 
     void logMoreContextException(Exception e, Object valueA, Object valueB) {
-        throw logException(new RuntimeException(CONTEXT_ERROR, e),
-                MORE_CONTEXT_ERROR_MESSAGE, valueA, valueB);
+        throw logException(new RuntimeException(CONTEXT_ERROR, e), MORE_CONTEXT_ERROR_MESSAGE, valueA, valueB);
     }
 }
