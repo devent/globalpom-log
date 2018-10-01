@@ -1,30 +1,35 @@
-!https://jenkins.anrisoftware.com/job/globalpom-log-public/job/master/badge/icon(Build Status)!:https://jenkins.anrisoftware.com/job/globalpom-log-public/job/master !https://sonarqube.anrisoftware.com/api/badges/gate?key=com.anrisoftware.globalpom%3Aglobalpom-log(Quality Gate)!:https://sonarqube.anrisoftware.com/dashboard?id=com.anrisoftware.globalpom%3Aglobalpom-log !https://project.anrisoftware.com/attachments/download/217/apache2.0-small.gif(Apache License, Version 2.0)!:http://www.apache.org/licenses/LICENSE-2.0 © 2011-2018 Erwin Müller
+[![Build Status]($context.get("project.custom.jenkins.build.badge.master"))]($context.get("project.custom.jenkins.build.link.master"))
+[![Quality Gate]($context.get("project.custom.sonarqube.qualitygate.badge"))]($context.get("project.custom.sonarqube.qualitygate.link"))
+[![Apache License, Version 2.0]($context.get("project.custom.license.image.url"))](http://www.apache.org/licenses/LICENSE-2.0) © $context.get("project.custom.year") $context.get("project.custom.user.name")
 
-h1. Description
+#[[#]]# Description
 
-Logger factory to inject a logger for a class.
+${project.description}
 
-h1. Links
+#[[#]]# Links
 
-* "Generated Site":https://javadoc.anrisoftware.com/com.anrisoftware.globalpom/globalpom-log/4.5.0-SNAPSHOT/globalpom-log/
-* "Download (Central)":https://search.maven.org/artifact/com.anrisoftware.globalpom/globalpom-log/4.5.0-SNAPSHOT/pom
-* "Source code":https://gitea.anrisoftware.com/anrisoftware.com/globalpom-log.git
-* "Source code (Github)":https://github.com/devent/globalpom-log
-* "Project Home":https://project.anrisoftware.com/projects/globalpom-log
-* "Project Roadmap":https://project.anrisoftware.com/projects/globalpom-log/roadmap
-* "Project Issues":https://project.anrisoftware.com/projects/globalpom-log/issues
-* "Jenkins":https://jenkins.anrisoftware.com/job/globalpom-log-public
-* "SonarQube":https://sonarqube.anrisoftware.com/dashboard?id=com.anrisoftware.globalpom%3Aglobalpom-log
+* [Generated Site](${project.url})
+* [Download (Central)]($context.get("project.custom.central.url"))
+* [Source code]($context.get("project.custom.scm.repo"))
+* [Source code (Github)]($context.get("project.custom.scm.github"))
+* [Project Home]($context.get("project.custom.home"))
+* [Project Roadmap]($context.get("project.custom.home")/roadmap)
+* [Project Issues]($context.get("project.custom.home")/issues)
+* [Jenkins]($context.get("project.custom.jenkins.url"))
+* [SonarQube]($context.get("project.custom.sonarqube.url"))
 
-h1. Packages Overview
+#[[#]]# Packages Overview
 
-!https://project.anrisoftware.com/attachments/download/445/packages.svg(Packages Overview)!
+![Packages Overview](images/packages.svg)
 
-h1. Examples
+#[[#]]# Examples
 
-The logging framework makes it easier to separate logging messages from the production code. Instead of having logging messages all around the code, the messages are all put together in one logging class and the class is injected into the client class.
+The logging framework makes it easier to separate logging messages from
+the production code. Instead of having logging messages all around the
+code, the messages are all put together in one logging class and the
+class is injected into the client class.
 
-<pre class="source">
+```
 /**
  * Logging messages for {@link Foo}.
  */
@@ -59,11 +64,14 @@ class Foo {
         log.loggingMessage(this);
     }
 }
-</pre>
+```
 
-For static logging messages a simple enumeration can be defined and the constants used as logging messages strings. The enumeration must be package public so that Java's static imports can be used to simplify the code.
+For static logging messages a simple enumeration can be defined and the
+constants used as logging messages strings. The enumeration must be
+package public so that Java’s static imports can be used to simplify the
+code.
 
-<pre class="source">
+```
 /**
  * Logging messages for {@link Foo}.
  */
@@ -103,11 +111,12 @@ class FooLogger extends AbstractLogger {
         }
     }
 }
-</pre>
+```
 
-Further, to dynamically load logging messages with internationalization support, the resources-texts project can be used.
+Further, to dynamically load logging messages with internationalization
+support, the resources-texts project can be used.
 
-<pre class="source">
+```
 /**
  * Logging messages for {@link Foo}.
  */
@@ -181,9 +190,4 @@ class FooLogger extends AbstractLogger {
         }
     }
 }
-</pre>
-
-
-
-Copyright ©2011 - 2018 "Advanced Natural Research Institute":https://anrisoftware.com/. All rights reserved.
-
+```
