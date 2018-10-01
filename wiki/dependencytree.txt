@@ -1,2 +1,0 @@
-com.anrisoftware.globalpom:globalpom-log:jar:1.13
-+- org.slf4j:slf4j-api:jar:1.7.5:compile

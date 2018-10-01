@@ -1,0 +1,190 @@
+[![Build Status]($context.get("project.custom.jenkins.build.badge.master"))]($context.get("project.custom.jenkins.build.link.master"))
+[![Quality Gate]($context.get("project.custom.sonarqube.qualitygate.badge"))]($context.get("project.custom.sonarqube.qualitygate.link"))
+[![Apache License, Version 2.0]($context.get("project.custom.license.image.url"))](http://www.apache.org/licenses/LICENSE-2.0) © $context.get("project.custom.year") $context.get("project.custom.user.name")
+
+#[[#]]# Description
+
+${project.description}
+
+#[[#]]# Links
+
+* [Generated Site](${project.url})
+* [Download (Central)]($context.get("project.custom.central.url"))
+* [Source code]($context.get("project.custom.scm.repo"))
+* [Source code (Github)]($context.get("project.custom.scm.github"))
+* [Project Home]($context.get("project.custom.home"))
+* [Project Roadmap]($context.get("project.custom.home")/roadmap)
+* [Project Issues]($context.get("project.custom.home")/issues)
+* [Jenkins]($context.get("project.custom.jenkins.url"))
+* [SonarQube]($context.get("project.custom.sonarqube.url"))
+
+#[[#]]# Packages Overview
+
+![Packages Overview](images/packages.svg)
+
+#[[#]]# Examples
+
+The logging framework makes it easier to separate logging messages from
+the production code. Instead of having logging messages all around the
+code, the messages are all put together in one logging class and the
+class is injected into the client class.
+
+```/**
+ * Logging messages for {@link Foo}.
+ */
+@Singleton
+class FooLogger extends AbstractLogger {
+
+    /**
+     * Create logger for {@link Foo}.
+     */
+    FooLogger() {
+        super(Foo.class);
+    }
+
+    void loggingMessage(Foo foo) {
+        if (isDebugEnabled()) {
+            debug("Debug logging message for {}.", foo);
+        } else {
+            info("Info logging message for {}.", foo);
+        }
+    }
+}
+
+/**
+ * Production class.
+ */
+class Foo {
+
+    @Inject
+    private FooLogger log;
+
+    public void method() {
+        log.loggingMessage(this);
+    }
+}
+```
+
+For static logging messages a simple enumeration can be defined and the
+constants used as logging messages strings. The enumeration must be
+package public so that Java’s static imports can be used to simplify the
+code.
+
+```/**
+ * Logging messages for {@link Foo}.
+ */
+@Singleton
+class FooLogger extends AbstractLogger {
+
+    enum m {
+
+        logging_message_debug("Debug logging message for {}."),
+
+        logging_message_info("Info logging message for {}.");
+
+        private String name;
+
+        private m(String name) {
+            this.name = name;
+        }
+
+        @Override
+        public String toString() {
+            return name;
+        }
+    }
+
+    /**
+     * Create logger for {@link Foo}.
+     */
+    FooLogger() {
+        super(Foo.class);
+    }
+
+    void loggingMessage(Foo foo) {
+        if (isDebugEnabled()) {
+            debug(logging_message_debug, foo);
+        } else {
+            info(logging_message_info, foo);
+        }
+    }
+}
+```
+
+Further, to dynamically load logging messages with internationalization
+support, the resources-texts project can be used.
+
+```/**
+ * Logging messages for {@link Foo}.
+ */
+@Singleton
+class FooLogger extends AbstractLogger {
+
+    enum m {
+
+        logging_message_debug,
+
+        logging_message_info;
+
+        /**
+         * Retrieves the text resources for the logging messages.
+         *
+         * @param texts
+         *            the texts {@link Texts} resources.
+         */
+        public static void retrieveResources(Texts texts) {
+            for (m value : values()) {
+                value.setText(texts);
+            }
+        }
+
+        private String name;
+
+        private String text;
+
+        private m(String name) {
+            this.name = name;
+        }
+
+        /**
+         * Retrieve the text resource for the logging message.
+         *
+         * @param texts
+         *            the texts {@link Texts} resources.
+         */
+        public void setText(Texts texts) {
+            this.text = texts.getResource(name).getText();
+        }
+
+        @Override
+        public String toString() {
+            return text;
+        }
+    }
+
+    /**
+     * Create logger for {@link Foo}.
+     */
+    FooLogger() {
+        super(Foo.class);
+    }
+
+    /**
+     * Retrieves the text resources for the logging messages.
+     *
+     * @param texts
+     *            the texts {@link Texts} resources.
+     */
+    public void retrieveResources(Texts texts) {
+        m.retrieveResources(texts);
+    }
+
+    void loggingMessage(Foo foo) {
+        if (isDebugEnabled()) {
+            debug(logging_message_debug, foo);
+        } else {
+            info(logging_message_info, foo);
+        }
+    }
+}
+```
