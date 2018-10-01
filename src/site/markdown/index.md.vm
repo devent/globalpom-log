@@ -29,7 +29,8 @@ the production code. Instead of having logging messages all around the
 code, the messages are all put together in one logging class and the
 class is injected into the client class.
 
-```/**
+```
+/**
  * Logging messages for {@link Foo}.
  */
 @Singleton
@@ -70,7 +71,8 @@ constants used as logging messages strings. The enumeration must be
 package public so that Java’s static imports can be used to simplify the
 code.
 
-```/**
+```
+/**
  * Logging messages for {@link Foo}.
  */
 @Singleton
@@ -114,7 +116,8 @@ class FooLogger extends AbstractLogger {
 Further, to dynamically load logging messages with internationalization
 support, the resources-texts project can be used.
 
-```/**
+```
+/**
  * Logging messages for {@link Foo}.
  */
 @Singleton
