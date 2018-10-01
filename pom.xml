@@ -120,7 +120,7 @@
                 </executions>
                 <configuration>
                     <Export-Package>!${project.custom.bundle.namespace.internal}.*,${project.custom.bundle.namespace}.*;version="${project.version}"</Export-Package>
-                    <Private-Package>${project.custom.bundlle.namespace.internal}.*</Private-Package>
+                    <Private-Package>${project.custom.bundle.namespace.internal}.*</Private-Package>
                     <instructions>
                         <_include>osgi.bnd</_include>
                         <_dsannotations>*</_dsannotations>
