@@ -49,6 +49,8 @@
         <project.custom.sonarqube.qualitygate.link>${project.custom.sonarqube.url}</project.custom.sonarqube.qualitygate.link>
         <project.custom.bundle.namespace>com.anrisoftware.globalpom.log</project.custom.bundle.namespace>
         <project.custom.bundle.namespace.internal>com.anrisoftware.globalpom.log.internal</project.custom.bundle.namespace.internal>
+        <!-- Sonar -->
+        <sonar.jacoco.reportPath>${project.basedir}/target/jacoco.exec</sonar.jacoco.reportPath>
     </properties>
 
     <developers>
