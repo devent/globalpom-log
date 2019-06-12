@@ -25,6 +25,7 @@
         <version>4.5.1-SNAPSHOT</version>
     </parent>
 
+    <groupId>com.anrisoftware.globalpom</groupId>
     <artifactId>globalpom-log</artifactId>
     <name>Global POM Logging</name>
     <version>4.5.1-SNAPSHOT</version>
