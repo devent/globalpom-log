@@ -50,7 +50,7 @@
         <project.custom.bundle.namespace>com.anrisoftware.globalpom.log</project.custom.bundle.namespace>
         <project.custom.bundle.namespace.internal>com.anrisoftware.globalpom.log.internal</project.custom.bundle.namespace.internal>
         <!-- Sonar -->
-        <sonar.jacoco.reportPath>${project.basedir}/target/jacoco.exec</sonar.jacoco.reportPath>
+        <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     </properties>
 
     <developers>
