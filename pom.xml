@@ -28,7 +28,7 @@
     <groupId>com.anrisoftware.globalpom</groupId>
     <artifactId>globalpom-log</artifactId>
     <name>Global POM Logging</name>
-    <version>4.5.1-SNAPSHOT</version>
+    <version>4.5.1</version>
     <description>Logger factory to inject a logger for a class.</description>
     <inceptionYear>2011</inceptionYear>
     <packaging>bundle</packaging>
@@ -85,7 +85,7 @@
         <connection>scm:git:git@anrisoftware.com:anrisoftware.com/${project.artifactId}.git</connection>
         <developerConnection>scm:git:git@anrisoftware.com:anrisoftware.com/${project.artifactId}.git</developerConnection>
         <url>https://anrisoftware.com/projects/${project.artifactId}/repository</url>
-      <tag>HEAD</tag>
+      <tag>globalpom-log-4.5.1</tag>
   </scm>
 
     <distributionManagement>
