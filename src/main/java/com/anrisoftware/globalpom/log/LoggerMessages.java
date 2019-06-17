@@ -56,7 +56,7 @@ enum LoggerMessages {
 	 * @param texts
 	 *            the texts {@link Texts} resources.
 	 */
-	public void setTexts(Texts texts) {
+	void setTexts(Texts texts) {
 		this.text = texts.getResource(name).getText();
 	}
 
