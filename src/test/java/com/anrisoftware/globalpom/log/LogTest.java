@@ -16,10 +16,12 @@
 package com.anrisoftware.globalpom.log;
 
 import static com.anrisoftware.globalpom.utils.TestUtils.reserialize;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
@@ -34,14 +36,16 @@ public class LogTest {
     @Test
     public void serialize_and_deserialize_logger() {
         Logger log = injector.getInstance(Logger.class);
-        log = (Logger) reserialize(log);
-        log.logInfo();
+        Logger logB = (Logger) reserialize(log);
+        logB.logInfo();
+        assertEquals(log.getLog().getName(), logB.getLog().getName());
     }
 
     @Test
     public void log_info() {
         Logger log = injector.getInstance(Logger.class);
         log.logInfo();
+        assertEquals("com.anrisoftware.globalpom.log.Logger", log.getLog().getName());
     }
 
     @Test
