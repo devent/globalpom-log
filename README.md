@@ -1,30 +1,34 @@
-!https://jenkins.anrisoftware.com/job/globalpom-log-public/job/master/badge/icon(Build Status)!:https://jenkins.anrisoftware.com/job/globalpom-log-public/job/master !https://sonar.anrisoftware.com/api/badges/gate?key=com.anrisoftware.globalpom%3Aglobalpom-log(Quality Gate)!:https://sonar.anrisoftware.com/dashboard?id=com.anrisoftware.globalpom%3Aglobalpom-log !https://project.anrisoftware.com/attachments/download/217/apache2.0-small.gif(Apache License, Version 2.0)!:http://www.apache.org/licenses/LICENSE-2.0 © 2011-2019 Erwin Müller
+<a href="https://jenkins.anrisoftware.com/job/globalpom-log-public/job/master">![Build Status](https://jenkins.anrisoftware.com/job/globalpom-log-public/job/master/badge/icon "Build Status")</a> <a href="https://sonar.anrisoftware.com/dashboard?id=com.anrisoftware.globalpom%3Aglobalpom-log">![Quality Gate](https://sonar.anrisoftware.com/api/badges/gate?key=com.anrisoftware.globalpom%3Aglobalpom-log "Quality Gate")</a> <a href="http://www.apache.org/licenses/LICENSE-2.0">![Apache License, Version 2.0](https://project.anrisoftware.com/attachments/download/217/apache2.0-small.gif "Apache License, Version 2.0")</a> © 2011-2019 Erwin Müller
 
-h1. Description
+Description
+===========
 
 Logger factory to inject a logger for a class.
 
-h1. Links
+Links
+=====
 
-* "Generated Site":https://javadoc.anrisoftware.com/com.anrisoftware.globalpom/globalpom-log/4.5.1/globalpom-log/
-* "Download (Central)":https://search.maven.org/artifact/com.anrisoftware.globalpom/globalpom-log/4.5.1/pom
-* "Source code":https://gitea.anrisoftware.com/anrisoftware.com/globalpom-log.git
-* "Source code (Github)":https://github.com/devent/globalpom-log
-* "Project Home":https://project.anrisoftware.com/projects/globalpom-log
-* "Project Roadmap":https://project.anrisoftware.com/projects/globalpom-log/roadmap
-* "Project Issues":https://project.anrisoftware.com/projects/globalpom-log/issues
-* "Jenkins":https://jenkins.anrisoftware.com/job/globalpom-log-public
-* "SonarQube":https://sonar.anrisoftware.com/dashboard?id=com.anrisoftware.globalpom%3Aglobalpom-log
+-   [Generated Site](https://javadoc.anrisoftware.com/com.anrisoftware.globalpom/globalpom-log/4.5.1/globalpom-log/)
+-   [Download (Central)](https://search.maven.org/artifact/com.anrisoftware.globalpom/globalpom-log/4.5.1/pom)
+-   [Source code](https://gitea.anrisoftware.com/anrisoftware.com/globalpom-log.git)
+-   [Source code (Github)](https://github.com/devent/globalpom-log)
+-   [Project Home](https://project.anrisoftware.com/projects/globalpom-log)
+-   [Project Roadmap](https://project.anrisoftware.com/projects/globalpom-log/roadmap)
+-   [Project Issues](https://project.anrisoftware.com/projects/globalpom-log/issues)
+-   [Jenkins](https://jenkins.anrisoftware.com/job/globalpom-log-public)
+-   [SonarQube](https://sonar.anrisoftware.com/dashboard?id=com.anrisoftware.globalpom%3Aglobalpom-log)
 
-h1. Packages Overview
+Packages Overview
+=================
 
-!https://project.anrisoftware.com/attachments/download/447/packages.svg(Packages Overview)!
+![Packages Overview](https://project.anrisoftware.com/attachments/download/447/packages.svg "Packages Overview")
 
-h1. Examples
+Examples
+========
 
 The logging framework makes it easier to separate logging messages from the production code. Instead of having logging messages all around the code, the messages are all put together in one logging class and the class is injected into the client class.
 
-<pre class="source">
+``` {.source}
 /**
  * Logging messages for {@link Foo}.
  */
@@ -59,11 +63,11 @@ class Foo {
         log.loggingMessage(this);
     }
 }
-</pre>
+```
 
-For static logging messages a simple enumeration can be defined and the constants used as logging messages strings. The enumeration must be package public so that Java's static imports can be used to simplify the code.
+For static logging messages a simple enumeration can be defined and the constants used as logging messages strings. The enumeration must be package public so that Java’s static imports can be used to simplify the code.
 
-<pre class="source">
+``` {.source}
 /**
  * Logging messages for {@link Foo}.
  */
@@ -103,11 +107,11 @@ class FooLogger extends AbstractLogger {
         }
     }
 }
-</pre>
+```
 
 Further, to dynamically load logging messages with internationalization support, the resources-texts project can be used.
 
-<pre class="source">
+``` {.source}
 /**
  * Logging messages for {@link Foo}.
  */
@@ -181,21 +185,22 @@ class FooLogger extends AbstractLogger {
         }
     }
 }
-</pre>
+```
 
+License
+=======
 
-h1. License
+Copyright ©2011 - 2019 [Advanced Natural Research Institute](https://anrisoftware.com/). All rights reserved.
 
-Copyright ©2011 - 2019 "Advanced Natural Research Institute":https://anrisoftware.com/. All rights reserved.
-
-Licensed under the Apache License, Version 2.0 (the "License");
+Licensed under the Apache License, Version 2.0 (the “License”);
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
 http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
+distributed under the License is distributed on an “AS IS” BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
