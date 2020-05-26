@@ -22,7 +22,7 @@
     <parent>
         <artifactId>globalpom-parent</artifactId>
         <groupId>com.anrisoftware.globalpom</groupId>
-        <version>4.5.1</version>
+        <version>4.5.2</version>
     </parent>
 
     <groupId>com.anrisoftware.globalpom</groupId>
@@ -153,7 +153,7 @@
                 <artifactId>maven-bundle-plugin</artifactId>
                 <extensions>true</extensions>
                 <executions>
-                    <!-- Configure extra execution of 'manifest' in process-classes 
+                    <!-- Configure extra execution of 'manifest' in process-classes
                         phase to make sure SCR metadata is generated before unit test runs -->
                     <execution>
                         <id>scr-metadata</id>
@@ -173,10 +173,22 @@
                         <_dsannotations>*</_dsannotations>
                         <_metatypeannotations>*</_metatypeannotations>
                     </instructions>
-                    <!-- Export SCR metadata to classpath to have them available 
+                    <!-- Export SCR metadata to classpath to have them available
                         in unit tests -->
                     <exportScr>true</exportScr>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
