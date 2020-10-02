@@ -15,23 +15,22 @@
     limitations under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
         <artifactId>globalpom-parent</artifactId>
         <groupId>com.anrisoftware.globalpom</groupId>
-        <version>4.5.2</version>
+        <version>4.6.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.anrisoftware.globalpom</groupId>
     <artifactId>globalpom-log</artifactId>
     <name>Global POM Logging</name>
-    <version>4.5.2</version>
     <description>Logger factory to inject a logger for a class.</description>
     <inceptionYear>2011</inceptionYear>
-    <packaging>bundle</packaging>
 
     <properties>
         <project.custom.home>https://project.anrisoftware.com/projects/globalpom-log</project.custom.home>
@@ -59,7 +58,7 @@
             <id>EM</id>
             <name>Erwin Müller</name>
             <organization>Advanced Natural Research Institute</organization>
-            <email>erwin.mueller@deventm.org</email>
+            <email>erwin.mueller@anrisoftware.com</email>
             <roles>
                 <role>Owner</role>
                 <role>Developer</role>
@@ -85,8 +84,8 @@
         <connection>scm:git:git@anrisoftware.com:anrisoftware.com/${project.artifactId}.git</connection>
         <developerConnection>scm:git:git@anrisoftware.com:anrisoftware.com/${project.artifactId}.git</developerConnection>
         <url>https://anrisoftware.com/projects/${project.artifactId}/repository</url>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 
     <distributionManagement>
         <site>
@@ -119,7 +118,7 @@
         <dependency>
             <groupId>com.anrisoftware.globalpom</groupId>
             <artifactId>globalpom-groovytestutils</artifactId>
-            <version>4.5.2</version>
+            <version>4.6.0-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -134,63 +133,6 @@
                 </includes>
             </resource>
         </resources>
-        <plugins>
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>report</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <extensions>true</extensions>
-                <executions>
-                    <!-- Configure extra execution of 'manifest' in process-classes
-                        phase to make sure SCR metadata is generated before unit test runs -->
-                    <execution>
-                        <id>scr-metadata</id>
-                        <goals>
-                            <goal>manifest</goal>
-                        </goals>
-                        <configuration>
-                            <supportIncrementalBuild>true</supportIncrementalBuild>
-                        </configuration>
-                    </execution>
-                </executions>
-                <configuration>
-                    <Export-Package>!${project.custom.bundle.namespace.internal}.*,${project.custom.bundle.namespace}.*;version="${project.version}"</Export-Package>
-                    <Private-Package>${project.custom.bundle.namespace.internal}.*</Private-Package>
-                    <instructions>
-                        <_include>osgi.bnd</_include>
-                        <_dsannotations>*</_dsannotations>
-                        <_metatypeannotations>*</_metatypeannotations>
-                    </instructions>
-                    <!-- Export SCR metadata to classpath to have them available
-                        in unit tests -->
-                    <exportScr>true</exportScr>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
     </build>
 
     <profiles>
