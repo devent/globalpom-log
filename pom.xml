@@ -24,11 +24,12 @@
     <parent>
         <artifactId>globalpom-parent</artifactId>
         <groupId>com.anrisoftware.globalpom</groupId>
-        <version>4.6.0</version>
+        <version>4.6.1</version>
     </parent>
 
     <artifactId>globalpom-log</artifactId>
     <name>Global POM Logging</name>
+    <version>4.6.1</version>
     <description>Logger factory to inject a logger for a class.</description>
     <inceptionYear>2011</inceptionYear>
 
@@ -36,9 +37,9 @@
         <project.custom.home>https://project.anrisoftware.com/projects/globalpom-log</project.custom.home>
         <project.custom.license.image.url>https://project.anrisoftware.com/attachments/download/217/apache2.0-small.gif</project.custom.license.image.url>
         <project.custom.central.url>https://search.maven.org/artifact/${project.groupId}/${project.artifactId}/${project.version}/pom</project.custom.central.url>
-        <project.custom.scm.repo>https://gitea.anrisoftware.com/anrisoftware.com/globalpom-log.git</project.custom.scm.repo>
+        <project.custom.scm.repo>https://gitea.anrisoftware.com/com.anrisoftware.globalpom/globalpom-log.git</project.custom.scm.repo>
         <project.custom.scm.github>https://github.com/devent/globalpom-log</project.custom.scm.github>
-        <project.custom.scm.pub>scm:git:https://gitea.anrisoftware.com/anrisoftware.com/globalpom-log.git</project.custom.scm.pub>
+        <project.custom.scm.pub>scm:git:https://gitea.anrisoftware.com/com.anrisoftware.globalpom/globalpom-log.git</project.custom.scm.pub>
         <project.custom.scm.dev>scm:git:git@anrisoftware.com:anrisoftware.com/globalpom-log.git</project.custom.scm.dev>
         <project.custom.scm.url>${project.custom.home}/repository</project.custom.scm.url>
         <project.custom.jenkins.url>https://jenkins.anrisoftware.com/job/globalpom-log-public</project.custom.jenkins.url>
@@ -89,8 +90,8 @@
 
     <distributionManagement>
         <site>
-            <id>site-ssh</id>
-            <url>${site.ssh.url}</url>
+            <id>site-dav</id>
+            <url>${site.dav.url}</url>
         </site>
         <repository>
             <id>public_releases</id>
@@ -118,7 +119,7 @@
         <dependency>
             <groupId>com.anrisoftware.globalpom</groupId>
             <artifactId>globalpom-groovytestutils</artifactId>
-            <version>4.6.0</version>
+            <version>4.6.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -140,8 +141,8 @@
             <id>osssonatype</id>
             <distributionManagement>
                 <site>
-                    <id>site-ssh</id>
-                    <url>${site.ssh.url}</url>
+                    <id>site-dav</id>
+                    <url>${site.dav.url}</url>
                 </site>
                 <repository>
                     <id>osssonatype_releases</id>
