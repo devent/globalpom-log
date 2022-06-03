@@ -1,4 +1,6 @@
-<a href="https://jenkins.anrisoftware.com/job/globalpom-log-public/job/master">![Build Status](https://jenkins.anrisoftware.com/job/globalpom-log-public/job/master/badge/icon "Build Status")</a> <a href="https://sonar.anrisoftware.com/dashboard?id=com.anrisoftware.globalpom%3Aglobalpom-log">![Quality Gate](https://sonar.anrisoftware.com/api/badges/gate?key=com.anrisoftware.globalpom%3Aglobalpom-log "Quality Gate")</a> <a href="http://www.apache.org/licenses/LICENSE-2.0">![Apache License, Version 2.0](https://project.anrisoftware.com/attachments/download/217/apache2.0-small.gif "Apache License, Version 2.0")</a> © 2011-2019 Erwin Müller
+[![Build Status](https://jenkins.anrisoftware.com/view/com.anrisoftware.globalpom/job/com.anrisoftware.globalpom-globalpom-log/job/main/badge/icon)](https://jenkins.anrisoftware.com/view/com.anrisoftware.globalpom/job/com.anrisoftware.globalpom-globalpom-log/job/main)
+[![Apache License, Version 2.0](https://project.anrisoftware.com/attachments/download/217/apache2.0-small.gif)](http://www.apache.org/licenses/LICENSE-2.0)
+© 2011-2022 Erwin Müller
 
 Description
 ===========
@@ -8,15 +10,20 @@ Logger factory to inject a logger for a class.
 Links
 =====
 
--   [Generated Site](https://javadoc.anrisoftware.com/com.anrisoftware.globalpom/globalpom-log/4.5.1/globalpom-log/)
--   [Download (Central)](https://search.maven.org/artifact/com.anrisoftware.globalpom/globalpom-log/4.5.1/pom)
--   [Source code](https://gitea.anrisoftware.com/anrisoftware.com/globalpom-log.git)
+-   [Generated
+    Site](https://javadoc.anrisoftware.com/com.anrisoftware.globalpom/globalpom-log/4.6.2/index.html)
+-   [Download
+    (Central)](https://search.maven.org/artifact/com.anrisoftware.globalpom/globalpom-log/4.5.2/pom)
+-   [Source
+    code](https://gitea.anrisoftware.com/com.anrisoftware.globalpom/globalpom-log)
 -   [Source code (Github)](https://github.com/devent/globalpom-log)
--   [Project Home](https://project.anrisoftware.com/projects/globalpom-log)
--   [Project Roadmap](https://project.anrisoftware.com/projects/globalpom-log/roadmap)
--   [Project Issues](https://project.anrisoftware.com/projects/globalpom-log/issues)
--   [Jenkins](https://jenkins.anrisoftware.com/job/globalpom-log-public)
--   [SonarQube](https://sonar.anrisoftware.com/dashboard?id=com.anrisoftware.globalpom%3Aglobalpom-log)
+-   [Project
+    Home](https://project.anrisoftware.com/projects/globalpom-log)
+-   [Project
+    Roadmap](https://project.anrisoftware.com/projects/globalpom-log/roadmap)
+-   [Project
+    Issues](https://project.anrisoftware.com/projects/globalpom-log/issues)
+-   [Jenkins](https://jenkins.anrisoftware.com/view/com.anrisoftware.globalpom/job/com.anrisoftware.globalpom-globalpom-log/)
 
 Packages Overview
 =================
@@ -26,7 +33,10 @@ Packages Overview
 Examples
 ========
 
-The logging framework makes it easier to separate logging messages from the production code. Instead of having logging messages all around the code, the messages are all put together in one logging class and the class is injected into the client class.
+The logging framework makes it easier to separate logging messages from
+the production code. Instead of having logging messages all around the
+code, the messages are all put together in one logging class and the
+class is injected into the client class.
 
 ``` {.source}
 /**
@@ -65,7 +75,10 @@ class Foo {
 }
 ```
 
-For static logging messages a simple enumeration can be defined and the constants used as logging messages strings. The enumeration must be package public so that Java’s static imports can be used to simplify the code.
+For static logging messages a simple enumeration can be defined and the
+constants used as logging messages strings. The enumeration must be
+package public so that Java's static imports can be used to simplify the
+code.
 
 ``` {.source}
 /**
@@ -109,7 +122,8 @@ class FooLogger extends AbstractLogger {
 }
 ```
 
-Further, to dynamically load logging messages with internationalization support, the resources-texts project can be used.
+Further, to dynamically load logging messages with internationalization
+support, the resources-texts project can be used.
 
 ``` {.source}
 /**
@@ -190,17 +204,23 @@ class FooLogger extends AbstractLogger {
 License
 =======
 
-Copyright ©2011 - 2019 [Advanced Natural Research Institute](https://anrisoftware.com/). All rights reserved.
+Copyright 2011-2022 Erwin Müller \<erwin.mueller\@anrisoftware.com\>
 
-Licensed under the Apache License, Version 2.0 (the “License”);
-you may not use this file except in compliance with the License.
+Licensed under the Apache License, Version 2.0 (the "License");\
+you may not use this file except in compliance with the License.\
 You may obtain a copy of the License at
 
-http://www.apache.org/licenses/LICENSE-2.0
+<http://www.apache.org/licenses/LICENSE-2.0>
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an “AS IS” BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
+Unless required by applicable law or agreed to in writing, software\
+distributed under the License is distributed on an "AS IS" BASIS,\
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+implied.\
+See the License for the specific language governing permissions and\
 limitations under the License.
 
+##### Markdown
+
+    [![Build Status](https://jenkins.anrisoftware.com/view/com.anrisoftware.globalpom/job/com.anrisoftware.globalpom-globalpom-log/job/main/badge/icon)](https://jenkins.anrisoftware.com/view/com.anrisoftware.globalpom/job/com.anrisoftware.globalpom-globalpom-log/job/main)
+    [![Apache License, Version 2.0](https://project.anrisoftware.com/attachments/download/217/apache2.0-small.gif)](http://www.apache.org/licenses/LICENSE-2.0)
+    © 2011-2022 Erwin Müller

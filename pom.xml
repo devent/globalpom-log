@@ -24,32 +24,32 @@
     <parent>
         <artifactId>globalpom-parent</artifactId>
         <groupId>com.anrisoftware.globalpom</groupId>
-        <version>4.6.1</version>
+        <version>4.6.2-SNAPSHOT</version>
     </parent>
 
     <artifactId>globalpom-log</artifactId>
     <name>Global POM Logging</name>
-    <version>4.6.1</version>
+    <version>4.6.2-SNAPSHOT</version>
     <description>Logger factory to inject a logger for a class.</description>
     <inceptionYear>2011</inceptionYear>
 
     <properties>
-        <project.custom.home>https://project.anrisoftware.com/projects/globalpom-log</project.custom.home>
-        <project.custom.license.image.url>https://project.anrisoftware.com/attachments/download/217/apache2.0-small.gif</project.custom.license.image.url>
-        <project.custom.central.url>https://search.maven.org/artifact/${project.groupId}/${project.artifactId}/${project.version}/pom</project.custom.central.url>
-        <project.custom.scm.repo>https://gitea.anrisoftware.com/com.anrisoftware.globalpom/globalpom-log.git</project.custom.scm.repo>
-        <project.custom.scm.github>https://github.com/devent/globalpom-log</project.custom.scm.github>
-        <project.custom.scm.pub>scm:git:https://gitea.anrisoftware.com/com.anrisoftware.globalpom/globalpom-log.git</project.custom.scm.pub>
-        <project.custom.scm.dev>scm:git:git@anrisoftware.com:anrisoftware.com/globalpom-log.git</project.custom.scm.dev>
-        <project.custom.scm.url>${project.custom.home}/repository</project.custom.scm.url>
-        <project.custom.jenkins.url>https://jenkins.anrisoftware.com/job/globalpom-log-public</project.custom.jenkins.url>
-        <project.custom.jenkins.build.badge.master>${project.custom.jenkins.url}/job/master/badge/icon</project.custom.jenkins.build.badge.master>
-        <project.custom.jenkins.build.link.master>${project.custom.jenkins.url}/job/master</project.custom.jenkins.build.link.master>
-        <project.custom.sonarqube.url>https://sonar.anrisoftware.com/dashboard?id=com.anrisoftware.globalpom%3Aglobalpom-log</project.custom.sonarqube.url>
-        <project.custom.sonarqube.qualitygate.badge>https://sonar.anrisoftware.com/api/badges/gate?key=com.anrisoftware.globalpom%3Aglobalpom-log</project.custom.sonarqube.qualitygate.badge>
-        <project.custom.sonarqube.qualitygate.link>${project.custom.sonarqube.url}</project.custom.sonarqube.qualitygate.link>
-        <project.custom.bundle.namespace>com.anrisoftware.globalpom.log</project.custom.bundle.namespace>
-        <project.custom.bundle.namespace.internal>com.anrisoftware.globalpom.log.internal</project.custom.bundle.namespace.internal>
+        <globalpom.custom.home>https://project.anrisoftware.com/projects/globalpom-log</globalpom.custom.home>
+        <globalpom.custom.license.image.url>https://project.anrisoftware.com/attachments/download/217/apache2.0-small.gif</globalpom.custom.license.image.url>
+        <globalpom.custom.central.url>https://search.maven.org/artifact/${project.groupId}/${project.artifactId}/${project.version}/pom</globalpom.custom.central.url>
+        <globalpom.custom.scm.repo>https://gitea.anrisoftware.com/com.anrisoftware.globalpom/globalpom-log.git</globalpom.custom.scm.repo>
+        <globalpom.custom.scm.github>https://github.com/devent/globalpom-log</globalpom.custom.scm.github>
+        <globalpom.custom.scm.pub>scm:git:https://gitea.anrisoftware.com/com.anrisoftware.globalpom/globalpom-log.git</globalpom.custom.scm.pub>
+        <globalpom.custom.scm.dev>scm:git:git@anrisoftware.com:anrisoftware.com/globalpom-log.git</globalpom.custom.scm.dev>
+        <globalpom.custom.scm.url>${globalpom.custom.home}/repository</globalpom.custom.scm.url>
+        <globalpom.custom.jenkins.url>https://jenkins.anrisoftware.com/view/com.anrisoftware.globalpom/job/com.anrisoftware.globalpom-globalpom-log</globalpom.custom.jenkins.url>
+        <globalpom.custom.jenkins.build.badge.master>${globalpom.custom.jenkins.url}/job/master/badge/icon</globalpom.custom.jenkins.build.badge.master>
+        <globalpom.custom.jenkins.build.link.master>${globalpom.custom.jenkins.url}/job/master</globalpom.custom.jenkins.build.link.master>
+        <globalpom.custom.sonarqube.url>https://sonar.anrisoftware.com/dashboard?id=com.anrisoftware.globalpom%3Aglobalpom-log</globalpom.custom.sonarqube.url>
+        <globalpom.custom.sonarqube.qualitygate.badge>https://sonar.anrisoftware.com/api/badges/gate?key=com.anrisoftware.globalpom%3Aglobalpom-log</globalpom.custom.sonarqube.qualitygate.badge>
+        <globalpom.custom.sonarqube.qualitygate.link>${globalpom.custom.sonarqube.url}</globalpom.custom.sonarqube.qualitygate.link>
+        <globalpom.custom.bundle.namespace>com.anrisoftware.globalpom.log</globalpom.custom.bundle.namespace>
+        <globalpom.custom.bundle.namespace.internal>com.anrisoftware.globalpom.log.internal</globalpom.custom.bundle.namespace.internal>
         <!-- Sonar -->
         <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     </properties>
@@ -119,7 +119,7 @@
         <dependency>
             <groupId>com.anrisoftware.globalpom</groupId>
             <artifactId>globalpom-groovytestutils</artifactId>
-            <version>4.6.1</version>
+            <version>${globalpom.custom.anrisoftware.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -137,6 +137,24 @@
     </build>
 
     <profiles>
+        <profile>
+            <id>private-repository</id>
+            <distributionManagement>
+                <site>
+                    <id>site-dav</id>
+                    <url>${site.dav.url}</url>
+                </site>
+                <repository>
+                    <id>private_repo_releases</id>
+                    <url>https://maven.anrisoftware.com/repository/internal/</url>
+                </repository>
+                <snapshotRepository>
+                    <id>private_repo_snapshots</id>
+                    <url>https://maven.anrisoftware.com/repository/snapshots/</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+
         <profile>
             <id>osssonatype</id>
             <distributionManagement>
@@ -202,6 +220,27 @@
                         <configuration>
                             <skip>true</skip>
                         </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <!-- De-lombok with -Pdelombok -->
+            <id>delombok</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>generate-sources</phase>
+                                <goals>
+                                    <goal>delombok</goal>
+                                </goals>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>
