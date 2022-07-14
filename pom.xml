@@ -32,6 +32,7 @@
     <version>4.6.3-SNAPSHOT</version>
     <description>Logger factory to inject a logger for a class.</description>
     <inceptionYear>2011</inceptionYear>
+    <url>https://javadoc.anrisoftware.com/${project.groupId}/${project.artifactId}/${project.version}/</url>
 
     <properties>
         <globalpom.custom.home>https://project.anrisoftware.com/projects/globalpom-log</globalpom.custom.home>
@@ -90,8 +91,8 @@
 
     <distributionManagement>
         <site>
-            <id>site-dav</id>
-            <url>${site.dav.url}</url>
+            <id>site-distribution-id</id>
+            <url>${site.distribution.url}</url>
         </site>
         <repository>
             <id>public_releases</id>
