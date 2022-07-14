@@ -12,18 +12,18 @@ Links
 =====
 
 -   [Generated
-    Site](https://javadoc.anrisoftware.com/com.anrisoftware.globalpom/globalpom-groovy-parent/4.6.3-SNAPSHOT/index.html)
+    Site](https://javadoc.anrisoftware.com/com.anrisoftware.globalpom/globalpom-log/4.6.3-SNAPSHOT/index.html)
 -   [Download
-    (Central)](https://search.maven.org/artifact/com.anrisoftware.globalpom/globalpom-groovy-base/4.6.3-SNAPSHOT/pom)
+    Central](https://search.maven.org/artifact/com.anrisoftware.globalpom/globalpom-log/4.6.3-SNAPSHOT/pom)
 -   [Source
-    code](https://gitea.anrisoftware.com/com.anrisoftware.globalpom/globalpom-groovy)
--   [Source code (Github)](https://github.com/devent/globalpom-groovy)
+    code](https://gitea.anrisoftware.com/com.anrisoftware.globalpom/globalpom-log)
+-   [Source code Github](https://github.com/devent/globalpom-log)
 -   [Project
-    Home](https://project.anrisoftware.com/projects/globalpom-groovy)
+    Home](https://project.anrisoftware.com/projects/globalpom-log)
 -   [Project
-    Roadmap](https://project.anrisoftware.com/projects/globalpom-groovy/roadmap)
+    Roadmap](https://project.anrisoftware.com/projects/globalpom-log/roadmap)
 -   [Project
-    Issues](https://project.anrisoftware.com/projects/globalpom-groovy/issues)
+    Issues](https://project.anrisoftware.com/projects/globalpom-log/issues)
 -   [Jenkins](https://jenkins.anrisoftware.com/view/com.anrisoftware.globalpom/job/com.anrisoftware.globalpom-globalpom-log)
 
 Packages Overview

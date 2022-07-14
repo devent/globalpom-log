@@ -6,13 +6,13 @@ Logger factory to inject a logger for a class.
 
 h1. Links
 
-* "Generated Site":https://javadoc.anrisoftware.com/com.anrisoftware.globalpom/globalpom-groovy-parent/%project.version%/index.html
-* "Download (Central)":https://search.maven.org/artifact/com.anrisoftware.globalpom/globalpom-groovy-base/%project.version%/pom
-* "Source code":https://gitea.anrisoftware.com/com.anrisoftware.globalpom/globalpom-groovy
-* "Source code (Github)":https://github.com/devent/globalpom-groovy
-* "Project Home":https://project.anrisoftware.com/projects/globalpom-groovy
-* "Project Roadmap":https://project.anrisoftware.com/projects/globalpom-groovy/roadmap
-* "Project Issues":https://project.anrisoftware.com/projects/globalpom-groovy/issues
+* "Generated Site":https://javadoc.anrisoftware.com/com.anrisoftware.globalpom/globalpom-log/%project.version%/index.html
+* "Download Central":https://search.maven.org/artifact/com.anrisoftware.globalpom/globalpom-log/%project.version%/pom
+* "Source code":https://gitea.anrisoftware.com/com.anrisoftware.globalpom/globalpom-log
+* "Source code Github":https://github.com/devent/globalpom-log
+* "Project Home":https://project.anrisoftware.com/projects/globalpom-log
+* "Project Roadmap":https://project.anrisoftware.com/projects/globalpom-log/roadmap
+* "Project Issues":https://project.anrisoftware.com/projects/globalpom-log/issues
 * "Jenkins":%globalpom.custom.jenkins.url%
 
 h1. Packages Overview
