@@ -12,9 +12,9 @@ Links
 =====
 
 -   [Generated
-    Site](https://javadoc.anrisoftware.com/com.anrisoftware.globalpom/globalpom-log/4.6.3-SNAPSHOT/index.html)
+    Site](https://javadoc.anrisoftware.com/com.anrisoftware.globalpom/globalpom-log/4.6.3/index.html)
 -   [Download
-    Central](https://search.maven.org/artifact/com.anrisoftware.globalpom/globalpom-log/4.6.3-SNAPSHOT/pom)
+    Central](https://search.maven.org/artifact/com.anrisoftware.globalpom/globalpom-log/4.6.3/pom)
 -   [Source
     code](https://gitea.anrisoftware.com/com.anrisoftware.globalpom/globalpom-log)
 -   [Source code Github](https://github.com/devent/globalpom-log)
