@@ -1,4 +1,5 @@
-[![Build Status](https://jenkins.anrisoftware.com/view/com.anrisoftware.globalpom/job/com.anrisoftware.globalpom-globalpom-log/job/main/badge/icon)](https://jenkins.anrisoftware.com/view/com.anrisoftware.globalpom/job/com.anrisoftware.globalpom-globalpom-log/job/main)
+[![Build Status](https://jenkins.anrisoftware.com/view/com.anrisoftware.globalpom/job/com.anrisoftware.globalpom-globalpom-log/job/main/badge/icon)](https://jenkins.anrisoftware.com/view/com.anrisoftware.globalpom/job/com.anrisoftware.globalpom-globalpom-log)
+[![Gate](https://sonarcloud.io/api/project_badges/measure?project=devent_globalpom-log&metric=alert_status)](https://sonarcloud.io/project/overview?id=devent_globalpom-log)
 [![Apache License, Version 2.0](https://project.anrisoftware.com/attachments/download/217/apache2.0-small.gif)](http://www.apache.org/licenses/LICENSE-2.0)
 © 2011-2022 Erwin Müller
 
@@ -11,19 +12,19 @@ Links
 =====
 
 -   [Generated
-    Site](https://javadoc.anrisoftware.com/com.anrisoftware.globalpom/globalpom-log/4.6.2/index.html)
+    Site](https://javadoc.anrisoftware.com/com.anrisoftware.globalpom/globalpom-groovy-parent/4.6.3-SNAPSHOT/index.html)
 -   [Download
-    (Central)](https://search.maven.org/artifact/com.anrisoftware.globalpom/globalpom-log/4.5.2/pom)
+    (Central)](https://search.maven.org/artifact/com.anrisoftware.globalpom/globalpom-groovy-base/4.6.3-SNAPSHOT/pom)
 -   [Source
-    code](https://gitea.anrisoftware.com/com.anrisoftware.globalpom/globalpom-log)
--   [Source code (Github)](https://github.com/devent/globalpom-log)
+    code](https://gitea.anrisoftware.com/com.anrisoftware.globalpom/globalpom-groovy)
+-   [Source code (Github)](https://github.com/devent/globalpom-groovy)
 -   [Project
-    Home](https://project.anrisoftware.com/projects/globalpom-log)
+    Home](https://project.anrisoftware.com/projects/globalpom-groovy)
 -   [Project
-    Roadmap](https://project.anrisoftware.com/projects/globalpom-log/roadmap)
+    Roadmap](https://project.anrisoftware.com/projects/globalpom-groovy/roadmap)
 -   [Project
-    Issues](https://project.anrisoftware.com/projects/globalpom-log/issues)
--   [Jenkins](https://jenkins.anrisoftware.com/view/com.anrisoftware.globalpom/job/com.anrisoftware.globalpom-globalpom-log/)
+    Issues](https://project.anrisoftware.com/projects/globalpom-groovy/issues)
+-   [Jenkins](https://jenkins.anrisoftware.com/view/com.anrisoftware.globalpom/job/com.anrisoftware.globalpom-globalpom-log)
 
 Packages Overview
 =================
@@ -204,13 +205,14 @@ class FooLogger extends AbstractLogger {
 License
 =======
 
-Copyright 2011-2022 Erwin Müller \<erwin.mueller\@anrisoftware.com\>
+Copyright ©2011 - 2022 [Advanced Natural Research
+Institute](https://anrisoftware.com/). All rights reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");\
 you may not use this file except in compliance with the License.\
 You may obtain a copy of the License at
 
-<http://www.apache.org/licenses/LICENSE-2.0>
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software\
 distributed under the License is distributed on an "AS IS" BASIS,\
@@ -221,6 +223,9 @@ limitations under the License.
 
 ##### Markdown
 
+    pandoc -t markdown -f textile -o README.md README.textile
+
     [![Build Status](https://jenkins.anrisoftware.com/view/com.anrisoftware.globalpom/job/com.anrisoftware.globalpom-globalpom-log/job/main/badge/icon)](https://jenkins.anrisoftware.com/view/com.anrisoftware.globalpom/job/com.anrisoftware.globalpom-globalpom-log/job/main)
+    [![Gate](https://sonarcloud.io/api/project_badges/measure?project=devent_globalpom-log&metric=alert_status)](https://sonarcloud.io/project/overview?id=devent_globalpom-log)
     [![Apache License, Version 2.0](https://project.anrisoftware.com/attachments/download/217/apache2.0-small.gif)](http://www.apache.org/licenses/LICENSE-2.0)
-    © 2011-2022 Erwin Müller
+    © 2011 - 2022 Erwin Müller
