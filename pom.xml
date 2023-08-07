@@ -1,6 +1,6 @@
 <!--
 
-    Copyright 2011-2022 Erwin Müller <erwin.mueller@anrisoftware.com>
+    Copyright 2011-2023 Erwin Müller <erwin.mueller@anrisoftware.com>
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -24,12 +24,12 @@
     <parent>
         <artifactId>globalpom-parent</artifactId>
         <groupId>com.anrisoftware.globalpom</groupId>
-        <version>4.6.2</version>
+        <version>4.7.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>globalpom-log</artifactId>
     <name>Global POM Logging</name>
-    <version>4.6.3</version>
+    <version>4.7.0-SNAPSHOT</version>
     <description>Logger factory to inject a logger for a class.</description>
     <inceptionYear>2011</inceptionYear>
     <url>https://javadoc.anrisoftware.com/${project.groupId}/${project.artifactId}/${project.version}/</url>
